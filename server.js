@@ -1,28 +1,26 @@
 /**
  * Created by Dominick Martelly on 7/6/2016.
  */
-var http = require('http');
+var express = require('express');
+var mongoose = require('mongoose');
 var fs = require('fs');
+var http = require('http');
+var config = require('./config/config');
+var root = __dirname
+var app = express();
 
-function send404(File, response) {
-    response.writeHead(404, {"Context-Type": "text/plain"})
-    response.write('The request for ' + File + ' was not found')
-    response.end();
-}
+require('./config/db')(config);
 
-//Handling a user request
-//Request is from the client. Response is what the server sends back
-function onRequest(request, response) {
-    console.log('Request is called for [' + request.url + ']')
-
-    if (request.method == 'GET' && request.url == '/') {
-        response.writeHead(200, {"Context-Type": "text/html"})
-        fs.createReadStream('./index.html').pipe(response);
-
-    } else {
-        send404(request.url, response);
+var modelsPath = __dirname + '/server/models';
+fs.readdirSync(modelsPath).forEach(function (file) {
+    if (file.indexOf('.js') >= 0) {
+        require(modelsPath + '/' + file);
     }
-}
+});
 
-http.createServer(onRequest).listen(8888);
-console.log('Server is on');
+require('./config/express')(app, config);
+require('./config/routes')(app);
+
+var server = http.createServer(app);
+server.listen(config.port, config.host);
+console.log('App started on port ' + config.port);
