@@ -3,6 +3,7 @@
  */
 var express = require('express');
 var mongoose = require('mongoose');
+var angular = require('angular');
 var fs = require('fs');
 var http = require('http');
 var config = require('./config/config');
