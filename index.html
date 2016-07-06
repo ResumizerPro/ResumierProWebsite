@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+    <title>Rate the song</title>
+    <link rel="stylesheet" href="scripts/bootstrap" /> //libs/bootstrap/dist/css/bootstrap.min.css
+    <link rel="stylesheet" href="scripts/font-awesome" /> //libs/font-awesome/css/font-awesome.min.css
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body ng-app="myApp">
+
+    <div ng-controller="resumeCtrl" class="container">
+      <div class="page-header">
+        <h1>Rate the Resume <small>Like them all!</small></h1>
+      </div>
+
+      <table class="table table-striped table-condensed">
+        <thead>
+          <tr>
+            <th>Resume</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="resume in resumes">
+            <td>
+              <div class="pull-left">
+                <strong>{{resume.artist}}</strong><br />
+                <small>{{resume.title}}</small>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script type="text/javascript" src="scripts/angular"></script> //libs/angular/angular.min.js
+    <script type="text/javascript" src="libs/lodash/dist/lodash.min.js"></script>
+    <script type="text/javascript" src="libs/underscore.string/dist/underscore.string.min.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/controllers.js"></script>
+    <script type="text/javascript" src="app/services.js"></script>
+    <script type="text/javascript" src="app/filters.js"></script>
+    <script type="text/javascript" src="app/directives.js"></script>
+  </body>
+</html>
