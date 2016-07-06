@@ -1,1 +1,42 @@
-[]
+{
+  "name": "resumizerprowebsite",
+  "version": "0.0.1",
+  "description": "A website to build powerful resumes!",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "morgan": "~1.3.0",
+    "compression": "~1.0.11",
+    "body-parser": "~1.8.0",
+    "method-override": "~2.2.0",
+    "express-session": "~1.7.6",
+    "ejs": "~1.0.0",
+    "connect-flash": "~0.1.1",
+    "mongoose": "~3.8.15",
+    "passport": "~0.2.1",
+    "passport-local": "~1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ResumizerPro/ResumizerProWebsite.git"
+  },
+  "keywords": [
+    "MEAN",
+    "Software",
+    "Engineering",
+    "MVC",
+    "Client-SEver",
+    "Latex"
+  ],
+  "author": "Jonathan, Stephanie, Dominik, Brian, Franco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ResumizerPro/ResumizerProWebsite/issues"
+  },
+  "homepage": "https://github.com/ResumizerPro/ResumizerProWebsite#readme"
+}
