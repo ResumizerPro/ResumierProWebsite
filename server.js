@@ -11,9 +11,6 @@ var app = express();
 
 require('./config/db')(config);
 
-angular.module("myApp", [
-  'myApp.controllers'
-]);
 
 var modelsPath = __dirname + '/server/models';
 fs.readdirSync(modelsPath).forEach(function (file) {
