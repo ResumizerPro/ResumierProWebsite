@@ -1,6 +1,6 @@
-angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scope) {
+angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scope, resumeService) {
     // Write your code here
-    $scope.resumes = [];
+    $scope.resumes = resumeService.get();
 
     $scope.newResumes = {};
 
@@ -16,4 +16,9 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
         $scope.newResumes.title = "";
         $scope.newResumes.artist = "";
     };
+  $scope.$watch('songs', function (newValue, oldValue) {
+    if (newValue !== oldValue) {
+    resumeService.put($scope.resumes);
+  }
+  });
 });
