@@ -4,14 +4,12 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
 
     $scope.newResumes = {};
 
-    $scope.addResume = function (artist, qualifications) {
-        var newResume = new resume();
-        newResume.isPublic = true;
-        newResume.qualifications = qualifications;
-        newResume.$save(function(response) {
-            $scope.resumes.push(response);
+    $scope.addResumes = function (artist, title) {
+        $scope.resumes.push({
+            artist: artist,
+            title: title
         });
-        $scope.newResumes.isPublic = "";
-        $scope.newResumes.qualifications = "";
+        $scope.newResumes.title = "";
+        $scope.newResumes.artist = "";
     };
 });
