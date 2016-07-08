@@ -3,7 +3,7 @@
  * process ID#6237
  */
 var express = require('express');
-//var mongoose = require('mongoose');
+var mongoose = require('mongoose'); //To make sure mongoose is on the server
 var fs = require('fs');
 var http = require('http');
 var config = require('./config/config');
