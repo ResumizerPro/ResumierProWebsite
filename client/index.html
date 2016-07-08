@@ -28,14 +28,14 @@
           <tr ng-repeat="resume in resumes">
             <td>
               <div class="pull-left">
-                <strong>{{resume.artist}}</strong><br />
-                <small>{{resume.title}}</small>
+                <strong>{{resume.isPublic}}</strong><br />
+                <small>{{resume.qualifications}}</small>
               </div>
             </td>
           </tr>
         </tbody>
       </table>
-      <form role="form" ng-submit="addResumes(newResumes.artist, newResumes.title)">
+      <form role="form" ng-submit="addResumes(null, newResumes.qualifications)">
       <div class="row">
         <div class="col-sm-5">
           <label class="sr-only" for="artist">Artist</label>
