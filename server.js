@@ -24,5 +24,5 @@ require('./config/express')(app, config);
 require('./config/routes')(app);
 
 var server = http.createServer(app);
-server.listen(config.port, config.host);
+server.listen(config.port);
 console.log('App started on port ' + config.port);
