@@ -11,10 +11,10 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function($scope
   title: "Ice Queen"
 }];
 
-$scope.newSong = {};
+$scope.newSong = { };
 
 $scope.addSong = function( artist, title) {
-  $scope.songs.push({
+  $scope.resumes.push({
     artist: artist,
     title: title
   });
