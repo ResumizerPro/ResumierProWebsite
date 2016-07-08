@@ -2,9 +2,9 @@
  * Created by Dominick Martelly on 7/6/2016.
  */
 var express = require('express');
-var app = express();
 
 module.exports = function(app, config) {
+    
     app.configure(function () {
         app.use(express.compress());
         app.set('port', config.port);
