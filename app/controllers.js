@@ -4,6 +4,10 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
 
     $scope.newResumes = {};
 
+    $scope.isEmpty = function(str) {
+      return _.isBlank(str);
+    };
+
     $scope.addResumes = function (artist, title) {
         $scope.resumes.push({
             artist: artist,
