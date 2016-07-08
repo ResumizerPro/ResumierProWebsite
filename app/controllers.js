@@ -5,7 +5,7 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
     $scope.newResumes = {};
 
     $scope.isEmpty = function(str) {
-      return _.isBlank(str);
+      return str.length == 0;
     };
 
     $scope.addResumes = function (artist, title) {
