@@ -11,14 +11,14 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function($scope
   title: "Ice Queen"
 }];
 
-$scope.newSong = { };
+$scope.newResumes = { };
 
-$scope.addSong = function( artist, title) {
+$scope.addResumes = function( artist, title) {
   $scope.resumes.push({
     artist: artist,
     title: title
   });
-  $scope.newSong.title = "";
-  $scope.newSong.artist = "";
+  $scope.newResumes.title = "";
+  $scope.newResumes.artist = "";
 };
 });
