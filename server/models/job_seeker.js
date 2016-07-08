@@ -4,7 +4,7 @@
 var mongoose = require('mongoose');
 
 var Schema = new mongoose.Schema({
-    User: String,
+    User: String, //Object
     attributes: String, //List
     resume: String //List
 });
