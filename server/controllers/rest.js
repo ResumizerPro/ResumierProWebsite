@@ -24,19 +24,19 @@ exports.findOneResume = function(req, res) {
 
 exports.addResume = function(req, res) {
     var document = new resume(req.body);
-    document.save(function(err, song) {
+    document.save(function(err, resume) {
         if (err) {
             throw new Error(err);
         }
-        res.send(song);
+        res.send(resume);
     });
 };
 
 exports.removeResume = function(req, res) {
-    resume.findByIdAndRemove(req.params.id, function(err, song) {
+    resume.findByIdAndRemove(req.params.id, function(err, resume) {
         if (err) {
             throw new Error(err);
         }
-        res.send(song);
+        res.send(resume);
     });
 };
