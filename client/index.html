@@ -28,8 +28,8 @@
           <tr ng-repeat="resume in resumes">
             <td>
               <div class="pull-left">
-                <strong>{{resume.artist}}</strong><br />
-                <small>{{resume.title}}</small>
+                <strong>{{resume.artist | titlesize}}</strong><br />
+                <small>{{resume.title | titlesize}}</small>
               </div>
             </td>
           </tr>
