@@ -2,7 +2,7 @@
  * Created by Dominick Martelly on 7/6/2016.
  */
 var express = require('express');
-var mongoose = require('mongoose');
+//var mongoose = require('mongoose');
 var fs = require('fs');
 var http = require('http');
 var config = require('./config/config');
@@ -12,7 +12,7 @@ var app = express();
 require('./config/db')(config);
 
 
-var modelsPath = __dirname + '/server/models';
+var modelsPath = root + '/server/models';
 fs.readdirSync(modelsPath).forEach(function (file) {
     if (file.indexOf('.js') >= 0) {
         require(modelsPath + '/' + file);
