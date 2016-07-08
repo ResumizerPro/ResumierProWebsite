@@ -11,12 +11,13 @@ module.exports = function(app, config) {
         app.use(express.logger('dev'));
         app.use(express.bodyParser());
         app.use(express.methodOverride());
-        app.use('/scripts_1/', express.static(__dirname + '/../node_modules/bootstrap/dist/js'));
-        app.use('/scripts_2/', express.static(__dirname + '/../node_modules/font-awesome/css/'));
-        app.use('/scripts_3/', express.static(__dirname + '/../node_modules/angular/'));
-        app.use('/scripts_4/', express.static(__dirname + '/../node_modules/lodash/'));
-        app.use('/scripts_5/', express.static(__dirname + '/../node_modules/underscrore.string/dist/'));
+        app.use('/scripts_1/', express.static(__dirname + "/../node_modules/bootstrap/dist/js"));
+        app.use('/scripts_2/', express.static(__dirname + "/../node_modules/font-awesome/css"));
+        app.use('/scripts_3/', express.static(__dirname + "/../node_modules/angular"));
+        app.use('/scripts_4/', express.static(__dirname + "/../node_modules/lodash"));
+        app.use('/scripts_5/', express.static(__dirname + "/../node_modules/underscrore.string/dist"));
         app.use('/api', app.router);
         app.use('/', express.static(__dirname + "/../client"));
+        app.use('/app', express.static(__dirname + "/../app"))
     });
 };
