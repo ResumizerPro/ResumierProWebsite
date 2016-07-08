@@ -6,13 +6,13 @@ var express = require('express');
 var fs = require('fs');
 var http = require('http');
 var config = require('./config/config');
-var root = __dirname
+var root = __dirname;
 var app = express();
 
 require('./config/db')(config);
 
-
 var modelsPath = root + '/server/models';
+
 fs.readdirSync(modelsPath).forEach(function (file) {
     if (file.indexOf('.js') >= 0) {
         require(modelsPath + '/' + file);
