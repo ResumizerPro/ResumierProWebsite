@@ -4,18 +4,9 @@
 var mongoose = require('mongoose');
 
 var Schema = new mongoose.Schema({
-    username: String,
+    User: String,
     company: String,
     email: String
-}, {
-    versionKey: false,
-    toJSON: {
-        virtuals: true,
-    },
-
-    toObject: {
-        virtuals: false
-    }
 });
 
 mongoose.model('employers', Schema);
