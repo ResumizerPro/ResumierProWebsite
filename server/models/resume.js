@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 
 var Schema = new mongoose.Schema({
     isPublic: String,
-    qualifications: String, //Collection of strings
+    qualifications: String //List
 });
 
 mongoose.model('resume', Schema);
