@@ -13,7 +13,7 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function($scope
 
 $scope.newSong = {};
 
-$scope.addSong = function(/** String */ artist, /** String */ title) {
+$scope.addSong = function( artist, title) {
   $scope.songs.push({
     artist: artist,
     title: title
