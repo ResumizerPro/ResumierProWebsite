@@ -19,8 +19,8 @@
     "morgan": "latest",
     "multer": "1.1.0",
     "passport": "1.0.0",
-    "passport-local": "4.0.0",
-    "passport-local-mongoose": "latest"
+    "passport-local": "1.0.0",
+    "passport-local-mongoose": "4.0.0"
   },
   "devDependencies": {},
   "scripts": {
