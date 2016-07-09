@@ -28,6 +28,7 @@ a{
   background:  #F9A01B;
   padding: 15px;
   border-radius: 10px;
+  max-width: 600px;
 }
 .loginform{
   max-width: 500px;
