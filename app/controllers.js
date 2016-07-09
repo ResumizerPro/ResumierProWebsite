@@ -24,8 +24,10 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
 
   $scope.$watch("resumes", function (newValue, oldValue) {
     if (newValue !== oldValue) {
-      var b = Object.keys($scope.resumes);
-      console.log(b);
+      for(var b in $scope.resumes){
+        console.log(Object.keys(b));
+      }
+      resumeService.put($scope.resumes);
     }
 }, true);
 });
