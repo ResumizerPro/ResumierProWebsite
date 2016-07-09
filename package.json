@@ -8,7 +8,7 @@
     "body-parser": "latest",
     "bootstrap": "3.3.6",
     "compression": "latest",
-    "connect-flash": "0.0.1",
+    "connect-flash": "0.1.1",
     "ejs": "latest",
     "errorhandler": "1.4.3",
     "express": "latest",
