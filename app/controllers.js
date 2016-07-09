@@ -18,7 +18,7 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
         resumeService.put($scope.resumes);
     };
 
-  $scope.$watch('$scope.resumes', function (newValue, oldValue) {
+  $scope.$watch('resumes', function (newValue, oldValue) {
     if (newValue !== oldValue) {
     console.log('change');
   }
