@@ -20,8 +20,14 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
 
   $scope.$watch("resumes", function (newValue, oldValue) {
     if (newValue !== oldValue) {
-      $scope.resumes.map(function(a, b){
-        console.log(a.artist + ' ' + b.artist);
+
+      $scope.resumes.map(function(a){
+        var c = $scope.resumes.map(function(b){
+          if(a == b){
+            return false;
+          }
+        });
+        console.log(c);
       });
     }
 }, true);
