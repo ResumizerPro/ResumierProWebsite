@@ -25,6 +25,5 @@ module.exports = function (app) {
     app.use('/fonts', express.static(__dirname + "/../node_modules/font-awesome/fonts");
     app.use('/', express.static(__dirname + "/../client"));
     app.use('/app', express.static(__dirname + "/../app"));
-    app.use('/css/', express.static(__dirnam + "/../assests/css"));
 
 };
