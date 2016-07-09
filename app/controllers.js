@@ -1,6 +1,6 @@
 angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scope, resumeService) {
     // Write your code here
-    $scope.resumes = resumeService.get();
+
 
     $scope.newResumes = {};
 
@@ -21,5 +21,6 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
     if (newValue !== oldValue) {
     resumeService.put($scope.resumes);
   }
+  $scope.resumes = resumeService.get();
   });
 });
