@@ -4,8 +4,6 @@
 var mongoose = require('mongoose');
 var resume = mongoose.model('resume');
 
-
-
 exports.findAllResume = function(req, res) {
     resume.find({}, function(err, songs) {
         if (err) {
