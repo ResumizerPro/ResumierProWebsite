@@ -15,6 +15,6 @@ module.exports = function(app){
   app.post('/resume', rest.addResume);
 
   // Delete song route
-  app.del('/resume/:id', rest.removeResume);
+  app.delete('/resume/:id', rest.removeResume);
 };
 
