@@ -23,12 +23,14 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
 
       $scope.resumes.map(function(a){
         var dup = true;
+        var count = 0;
         $scope.resumes.map(function(b){
           if(a == b){
-            dup =  false;
+            count++;
           }
         });
-        console.log(dup);
+        if(count > 1)
+          console.log(false);
       });
     }
 }, true);
