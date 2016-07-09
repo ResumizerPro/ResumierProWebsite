@@ -1,7 +1,7 @@
 angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scope, resumeService) {
     // Write your code here
     $scope.resumes = resumeService.get();
-    console.log(resumeService.get());
+
     $scope.newResumes = {};
 
     $scope.isEmpty = function(str) {
@@ -15,11 +15,12 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
         });
         $scope.newResumes.title = "";
         $scope.newResumes.artist = "";
+        console.log(resumeService.get());
     };
 
   $scope.$watch('resumes', function (newValue, oldValue) {
     if (newValue !== oldValue) {
-    resumeService.put(newValue);
+    resumeService.put($scope.resumes);
   }
   });
 });
