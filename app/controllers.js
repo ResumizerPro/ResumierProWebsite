@@ -22,12 +22,13 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
     if (newValue !== oldValue) {
 
       $scope.resumes.map(function(a){
-        var c = $scope.resumes.map(function(b){
+        var dup = true;
+        $scope.resumes.map(function(b){
           if(a == b){
-            return false;
+            dup =  false;
           }
         });
-        console.log(c);
+        console.log(dup);
       });
     }
 }, true);
