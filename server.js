@@ -12,8 +12,7 @@ var root = __dirname;
 
 var app = express();
 
-require('./config/db')(config);
-console.log(config.db);
+
 var modelsPath = root + '/server/models';
 
 fs.readdirSync(modelsPath).forEach(function (file) {
@@ -22,6 +21,7 @@ fs.readdirSync(modelsPath).forEach(function (file) {
     }
 });
 
+require('./config/db')(config);
 require('./config/routes')(app);
 require('./config/express')(app);
 
