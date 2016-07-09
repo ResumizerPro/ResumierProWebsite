@@ -1,15 +1,13 @@
 /**
  * Created by Dominick Martelly on 7/6/2016.
  */
-var env = process.env.NODE_ENV || 'development';
 
-//Setup for our monngoDB
+//Setup for our mongoDB
 var config = {
     port: 27018,
     db: 'mongodb://localhost/ResumizerPro',
-    host: 'localhost',
-    webport: 80
+    host: 'localhost'
 };
 
-//So other modules can use this config module
+//So other modules can use this db config module
 module.exports = config;

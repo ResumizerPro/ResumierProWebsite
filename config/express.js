@@ -3,21 +3,26 @@
  */
 var express = require('express');
 
-module.exports = function(app, config) {
+var compression = require('compression');
+var logger = require('morgan');
+var methodOverride = require('method-override');
+var bodyParser = require('body-parser');
+var multer = require('multer');
 
-    app.configure(function () {
-        app.use(express.compress());
-        app.set('port', config.webport);
-        app.use(express.logger('dev'));
-        app.use(express.bodyParser());
-        app.use(express.methodOverride());
-        app.use('/scripts_1/', express.static(__dirname + "/../node_modules/bootstrap/dist/css"));
-        app.use('/scripts_2/', express.static(__dirname + "/../node_modules/font-awesome/css"));
-        app.use('/scripts_3/', express.static(__dirname + "/../node_modules/angular"));
-        app.use('/scripts_4/', express.static(__dirname + "/../node_modules/lodash"));
-        app.use('/scripts_5/', express.static(__dirname + "/../node_modules/underscore.string/dist"));
-        app.use('/api', app.router);
-        app.use('/', express.static(__dirname + "/../client"));
-        app.use('/app', express.static(__dirname + "/../app"))
-    });
+module.exports = function (app) {
+
+    app.set('port', 80);
+    app.use(compression());
+    app.use(logger('dev'));
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({extended: true}));
+    app.use(methodOverride());
+    app.use('/scripts_1/', express.static(__dirname + "/../node_modules/bootstrap/dist/css"));
+    app.use('/scripts_2/', express.static(__dirname + "/../node_modules/font-awesome/css"));
+    app.use('/scripts_3/', express.static(__dirname + "/../node_modules/angular"));
+    app.use('/scripts_4/', express.static(__dirname + "/../node_modules/lodash"));
+    app.use('/scripts_5/', express.static(__dirname + "/../node_modules/underscore.string/dist"));
+    app.use('/', express.static(__dirname + "/../client"));
+    app.use('/app', express.static(__dirname + "/../app"));
+
 };
