@@ -18,7 +18,7 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
 
     };
 
-  $scope.$watch('newResumes', function (newValue, oldValue) {
+  $scope.$watch("resumes", function (newValue, oldValue) {
     console.log('newValue: ' + newValue + ' OldValue: ' + oldValue)
     if (newValue !== oldValue) {
     console.log('change');
