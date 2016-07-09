@@ -19,9 +19,9 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
     };
 
   $scope.$watch("resumes", function (newValue, oldValue) {
-    console.log('newValue: ' + newValue + ' OldValue: ' + oldValue)
+
     if (newValue !== oldValue) {
-    console.log('change');
+    resumeService.put($scope.resumes);
   }
 }, true);
 });
