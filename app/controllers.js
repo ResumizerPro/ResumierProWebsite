@@ -19,9 +19,19 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
     };
 
   $scope.$watch("resumes", function (newValue, oldValue) {
-    console.log('newValue: ' + newValue + ' OldValue: ' + oldValue)
     if (newValue !== oldValue) {
-    console.log('change');
-  }
-  });
+
+      $scope.resumes.map(function(a){
+        var dup = true;
+        var count = 0;
+        $scope.resumes.map(function(b){
+          if(a == b){
+            count++;
+          }
+        });
+        if(count > 1)
+          console.log(false);
+      });
+    }
+}, true);
 });
