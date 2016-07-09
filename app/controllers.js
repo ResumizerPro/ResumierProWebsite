@@ -20,6 +20,7 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
   $scope.$watch('resumes', function (newValue, oldValue) {
     if (newValue !== oldValue) {
     resumeService.put($scope.resumes);
+    $scope.resumes = resumeService.get();
   }
   });
 });
