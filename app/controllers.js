@@ -20,7 +20,7 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
 
   $scope.$watch("resumes", function (newValue, oldValue) {
     if (newValue !== oldValue) {
-      JSON.stringify($scope.resumes).map(function(a){
+      $scope.resumes.map(function(a){
         console.log(a);
       });
     }
