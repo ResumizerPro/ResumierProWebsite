@@ -4,8 +4,10 @@
     margin-top: -6%;
     top: 0%;
     align-self: baseline;
+    color: inherit;
 }
 .navbar-default{
   background:  #98002E;
+  border-color:  #F9A01B;
   color: #FFFFFF;
 }
