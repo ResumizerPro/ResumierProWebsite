@@ -23,5 +23,5 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
     if (newValue !== oldValue) {
     console.log('change');
   }
-  });
+}, true);
 });
