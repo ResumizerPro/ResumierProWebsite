@@ -7,7 +7,7 @@ var express = require('express');
 //noinspection JSUnusedLocalSymbols
 var mongoose = require('mongoose'); //To make sure mongoose is on the server
 var fs = require('fs');
-var config = require('./config/config');
+var config = require('./server/config/config');
 var root = __dirname;
 
 var app = express();
@@ -21,9 +21,11 @@ fs.readdirSync(modelsPath).forEach(function (file) {
     }
 });
 
-require('./config/db')(config);
-require('./config/routes')(app);
-require('./config/express')(app);
+require('./server/config/db')(config);
+require('./server/routes/resume')(app);
+require('./server/routes/user')(app);
+
+require('./server/config/express')(app);
 
 var server = http.createServer(app);
 server.listen(app.get('port'), function() {

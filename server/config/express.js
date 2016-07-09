@@ -10,7 +10,6 @@ var bodyParser = require('body-parser');
 var multer = require('multer');
 
 module.exports = function (app) {
-
     app.set('port', 80);
     app.use(compression());
     app.use(logger('dev'));
@@ -21,8 +20,6 @@ module.exports = function (app) {
     app.use('/scripts_2/', express.static(__dirname + "/../node_modules/font-awesome/css"));
     app.use('/scripts_3/', express.static(__dirname + "/../node_modules/angular"));
     app.use('/scripts_4/', express.static(__dirname + "/../node_modules/bootstrap/dist/js"));
-    app.use('/fonts', express.static(__dirname + "/../node_modules/font-awesome/fonts");
+    app.use('/fonts', express.static(__dirname + "/../node_modules/font-awesome/fonts"));
     app.use('/', express.static(__dirname + "/../client"));
-    app.use('/app', express.static(__dirname + "/../app"));
-
 };
