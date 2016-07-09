@@ -15,7 +15,7 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
         });
         $scope.newResumes.title = "";
         $scope.newResumes.artist = "";
-        console.log(resumes);
+        console.log($scope.resumes);
     };
 
   $scope.$watch('resumes', function (newValue, oldValue) {
