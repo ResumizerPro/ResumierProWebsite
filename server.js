@@ -3,6 +3,7 @@
  * process ID#6237
  */
 var express = require('express');
+//noinspection JSUnusedLocalSymbols
 var mongoose = require('mongoose'); //To make sure mongoose is on the server
 var fs = require('fs');
 var http = require('http');
@@ -25,4 +26,4 @@ require('./config/routes')(app);
 
 var server = http.createServer(app);
 server.listen(config.webport);
-console.log('App started on port ' + config.port);
+console.log('App started on port ' + config.webport);
