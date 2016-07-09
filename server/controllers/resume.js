@@ -5,20 +5,20 @@ var mongoose = require('mongoose');
 var resume = mongoose.model('resume');
 
 exports.findAllResume = function(req, res) {
-    resume.find({}, function(err, songs) {
+    resume.find({}, function(err, resume) {
         if (err) {
             throw new Error(err);
         }
-        res.send(songs);
+        res.send(resume);
     });
 };
 
 exports.findOneResume = function(req, res) {
-    resume.findById(req.params.id, function(err, song) {
+    resume.findById(req.params.id, function(err, resume) {
         if (err) {
             throw new Error(err);
         }
-        res.send(song);
+        res.send(resume);
     });
 };
 

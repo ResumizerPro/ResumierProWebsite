@@ -1,15 +1,16 @@
 /**
  * Created by Dominick Martelly on 7/9/2016.
  */
-var express = require('express');
 var passport = require('passport');
-var rest = require('../controllers/resume');
-var resume = require('../models/resume');
+
+var control = require('../controllers/user');
+var user = require('../models/user');
 
 module.exports = function (app) {
+    /*
     app.route('/users')
-        .post(rest.create)
-        .get(rest.list);
+        .post(control.createUser)
+        .get(control.list);
 
     app.route('/users/:userId')
         .get(users.read)
@@ -21,7 +22,7 @@ module.exports = function (app) {
         .post(users.signup);
 
     app.route('/signin')
-        .get(rest.renderSignin)
+        .get(control.renderSignin)
         .post(passport.authenticate('local', {
             successRedirect: '/',
             failureRedirect: '/signin',
@@ -62,4 +63,5 @@ module.exports = function (app) {
     app.get('/ping', function (req, res) {
         res.status(200).send("pong!");
     });
+    */
 };

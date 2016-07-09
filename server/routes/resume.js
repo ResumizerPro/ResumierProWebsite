@@ -5,16 +5,15 @@ var control = require('../controllers/resume');
 var resume = require('../models/resume');
 
 module.exports = function (app) {
-    // find all songs route
+    // Find all resumes
     app.get('/resume', control.findAllResume);
 
-    // find one song route
+    // Find one resume
     app.get('/resume/:id', control.findOneResume);
 
-    // Add song route
+    // Add resume
     app.post('/resume', control.addResume);
 
-    // Delete song route
+    // Delete resume
     app.delete('/resume/:id', control.removeResume);
 };
-
