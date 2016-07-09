@@ -15,12 +15,12 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
         });
         $scope.newResumes.title = "";
         $scope.newResumes.artist = "";
-
+        resumeService.put($scope.resumes);
     };
 
   $scope.$watch('$scope.resumes', function (newValue, oldValue) {
     if (newValue !== oldValue) {
-    resumeService.put($scope.resumes);
+    console.log('change');
   }
   });
 });
