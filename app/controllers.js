@@ -1,7 +1,7 @@
 angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scope, resumeService) {
     // Write your code here
     $scope.resumes = resumeService.get();
-
+    console.log(resumeService.get());
     $scope.newResumes = {};
 
     $scope.isEmpty = function(str) {
