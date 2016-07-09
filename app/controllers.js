@@ -15,10 +15,11 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
         });
         $scope.newResumes.title = "";
         $scope.newResumes.artist = "";
-        
+
     };
 
-  $scope.$watch('resumes', function (newValue, oldValue) {
+  $scope.$watch('newResumes', function (newValue, oldValue) {
+    console.log('newValue: ' + newValue + ' OldValue: ' + oldValue)
     if (newValue !== oldValue) {
     console.log('change');
   }
