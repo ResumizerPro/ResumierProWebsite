@@ -9,4 +9,6 @@ var Schema = new mongoose.Schema({
     email: String
 });
 
-mongoose.model('user', Schema);
+//Schema.plugin(passportLocalMongoose);
+
+module.exports = mongoose.model('user', Schema);
