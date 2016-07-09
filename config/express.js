@@ -22,9 +22,9 @@ module.exports = function (app) {
     app.use('/scripts_3/', express.static(__dirname + "/../node_modules/angular"));
     app.use('/scripts_4/', express.static(__dirname + "/../node_modules/lodash"));
     app.use('/scripts_5/', express.static(__dirname + "/../node_modules/underscore.string/dist"));
-    app.use('/fonts', express.static(__dirname + "/../node_modules/font-awesome/fonts");
+    app.use('/fonts', express.static(__dirname + "/../node_modules/font-awesome/fonts"));
     app.use('/', express.static(__dirname + "/../client"));
     app.use('/app', express.static(__dirname + "/../app"));
-    app.use('/css', express.static(__dirnam + "/../assests/css/"));
+    app.use('/css', express.static(__dirname + "/../assests/css/"));
 
 };
