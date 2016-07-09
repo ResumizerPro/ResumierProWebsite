@@ -5,7 +5,7 @@ factory.get = function() {
   return JSON.parse(localStorage.getItem(STORAGE_ID) || '[]');
 };
 
-factory.put = function(songs) {
+factory.put = function(resumes) {
   localStorage.setItem(STORAGE_ID, JSON.stringify(resumes));
 };
 
