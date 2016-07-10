@@ -4,8 +4,19 @@
 var mongoose = require('mongoose');
 var user = mongoose.model('user');
 
-exports.createUser = function(req, res) {
-    user.find({}, function(err, resume) {
+exports.renderSignin = function (req, res, next) {
 
-    });
+    if(!req.user) {
+        res.render ('/login', {
+            title: 'Sign-in Form',
+            messages: req.flash('error') || req.flash('info')
+        });
+    } else{
+        return res.redirect('/');
+    }
 };
+
+exports.signout = function(req, res) {
+    req.logout();
+    res.redirect('/');
+}

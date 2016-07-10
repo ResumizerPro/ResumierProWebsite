@@ -7,11 +7,17 @@ var control = require('../controllers/user');
 var user = require('../models/user');
 
 module.exports = function (app) {
-    /*
-    app.route('/users')
-        .post(control.createUser)
-        .get(control.list);
 
+    app.route('/login')
+        .get(control.renderSignin)
+        .post(passport.authenticate('local', {
+            successRedirect: '/',
+            failureRedirect: '/login',
+            failureFlash: true
+        }));
+
+    app.get('/signout', control.signout);
+/*
     app.route('/users/:userId')
         .get(users.read)
         .put(users.update)
@@ -21,13 +27,7 @@ module.exports = function (app) {
         .get(users.renderSignup)
         .post(users.signup);
 
-    app.route('/signin')
-        .get(control.renderSignin)
-        .post(passport.authenticate('local', {
-            successRedirect: '/',
-            failureRedirect: '/signin',
-            failureFlash: true
-        }));
+
     app.get('/signout', users.signout);
 
     //Registration
@@ -63,5 +63,5 @@ module.exports = function (app) {
     app.get('/ping', function (req, res) {
         res.status(200).send("pong!");
     });
-    */
+*/
 };

@@ -4,7 +4,7 @@
 
 //Setup for our mongoDB
 var config = {
-    port: 27018,
+    port: 27017,
     db: 'mongodb://localhost/ResumizerPro',
     host: 'localhost'
 };
