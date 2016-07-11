@@ -10,6 +10,7 @@ module.exports = function (app) {
     app.set('port', 80);
     app.use(compression());
     app.use(logger('dev'));
+    app.use(express.bodyParser());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(methodOverride());
