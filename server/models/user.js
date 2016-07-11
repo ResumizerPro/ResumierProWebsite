@@ -1,6 +1,3 @@
-/**
- * Created by Dominick Martelly on 7/7/2016.
- */
 var mongoose = require('mongoose');
 var passportLocalMongoose = require('passport-local-mongoose');
 
@@ -26,6 +23,7 @@ Schema.methods.authenticate = function(password) {
     return this.password === this.hashPassword(password);
 };
 
+//This plugin is used for authentication for the password since it is encrypted
 Schema.plugin(passportLocalMongoose);
 
 mongoose.model('user', Schema);

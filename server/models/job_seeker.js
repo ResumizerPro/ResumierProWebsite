@@ -1,12 +1,9 @@
-/**
- * Created by Dominick Martelly on 7/7/2016.
- */
 var mongoose = require('mongoose');
 
 var Schema = new mongoose.Schema({
-    User: String, //Object
-    attributes: String, //List
-    resume: String //List
+    User: String,  //Holds the Object Id of the User object
+    attributes: [String], //List of Strings
+    resume: [String] //List of Strings
 });
 
 mongoose.model('job_seeker', Schema);

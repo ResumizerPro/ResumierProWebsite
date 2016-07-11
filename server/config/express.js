@@ -1,6 +1,3 @@
-/**
- * Created by Dominick Martelly on 7/6/2016.
- */
 var express = require('express');
 
 var compression = require('compression');
