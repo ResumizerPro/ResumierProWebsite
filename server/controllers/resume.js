@@ -24,7 +24,7 @@ exports.findOneResume = function(req, res) {
 
 exports.addResume = function(req, res) {
     var document = new resume(req.body);
-    console.log(req.params.isPublic);
+    console.log(req.params("isPublic"));
 
     document.save(function(err, resume) {
         if (err) {
