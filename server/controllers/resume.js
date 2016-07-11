@@ -1,6 +1,3 @@
-/**
- * Created by Dominick Martelly on 7/7/2016.
- */
 var mongoose = require('mongoose');
 var resume = mongoose.model('resume');
 
@@ -23,8 +20,10 @@ exports.findOneResume = function(req, res) {
 };
 
 exports.addResume = function(req, res) {
-    var document = new resume(req.query); //CHANGING TO QUERY FOR TESTING
-    //will need to change back to req.body ONCE html page is up
+    console.log(req.params);
+    console.log(req.query);
+    console.log(req.body); //Find out why body is undefined
+    var document = new resume(req.query); //Change back to req.body after testing
 
     document.save(function(err, resume) {
         if (err) {

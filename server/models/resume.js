@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var Schema = new mongoose.Schema({
-    isPublic: String,
+    isPublic: Boolean,
     qualifications: [String] //List of strings
 });
 
