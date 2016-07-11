@@ -23,8 +23,8 @@ exports.findOneResume = function(req, res) {
 };
 
 exports.addResume = function(req, res) {
-    var document = new resume(req.body);
-    console.log(req.query);
+    var document = new resume(req.query); //CHANGING TO QUERY FOR TESTING
+    //will need to change back to req.body ONCE html page is up
 
     document.save(function(err, resume) {
         if (err) {
