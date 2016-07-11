@@ -24,7 +24,7 @@ exports.findOneResume = function(req, res) {
 
 exports.addResume = function(req, res) {
     var document = new resume(req.body);
-    console.log(req.query);
+    console.log(req.params);
     document.save(function(err, resume) {
         if (err) {
             throw new Error(err);
