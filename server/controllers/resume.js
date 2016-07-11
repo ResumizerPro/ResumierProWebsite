@@ -14,11 +14,11 @@ exports.findAllResume = function(req, res) {
 };
 
 exports.findOneResume = function(req, res) {
-    resume.findById(req.params.id, function(err, resume) {
+    resume.findById(req.params.id, function(err, resume_s) {
         if (err) {
             throw new Error(err);
         }
-        res.send(resume);
+        res.send(resume_s);
     });
 };
 
