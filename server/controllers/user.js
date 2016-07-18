@@ -3,7 +3,8 @@ var user = mongoose.model('user');
 
 exports.signup = function(req, res, next) {
     if(!req.user) {
-        var user = new User(req.body);
+        console.log(req.body);
+        var user = new user(req.body);
         var message = null;
 
         user.provider = 'local';
@@ -37,7 +38,7 @@ exports.createUser = function(req, res, next){
 };
 
 exports.listUsers = function(req, res, next) {
-    User.find({}, function(err, users) {
+    user.find({}, function(err, users) {
         if (err) {
             return next(err);
         } else {
@@ -47,13 +48,13 @@ exports.listUsers = function(req, res, next) {
 
 exports.read = function(req, res){
     var userId = req.params.userId;
-    User.find({_id: userId}, function(err, user) {
+    user.find({_id: userId}, function(err, user) {
         res.json(user);
     });
 };
 
 exports.update = function(req, res, next) {
-    User.findByIdAndUpdate(req.params.userId, req.body, function(err, user) {
+    user.findByIdAndUpdate(req.params.userId, req.body, function(err, user) {
         if (err) {
             return next(err);
         } else {
@@ -63,7 +64,7 @@ exports.update = function(req, res, next) {
 };
 
 exports.delete = function(req, res, next) {
-    User.remove({_id: req.params.userId}, function(err, user) {
+    user.remove({_id: req.params.userId}, function(err, user) {
         res.json(user);
     });
 

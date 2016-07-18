@@ -13,6 +13,7 @@ module.exports = function (app) {
         .delete(control.delete);
 
     app.post('/login', function (req, res) {
+        console.log(req.user);
         res.status('login').send({user: req.user});
     });
 

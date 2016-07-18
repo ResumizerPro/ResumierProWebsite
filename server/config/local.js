@@ -4,13 +4,10 @@ var passport = require('passport'),
 
 module.exports = function() {
     passport.use(new LocalStrategy(function(username, password, done){
-        User.findOne({
-            username: username
-        }, function(err,user){
+        User.findOne({username: username}, function(err,user){
             if(err){
                 return done(err);
             }
-
             if(!user){
                 return done(null, false, {
                     message: 'Unknown User'
@@ -21,7 +18,6 @@ module.exports = function() {
                     message: 'Invalid password'
                 });
             }
-
             return done(null, user);
         });
     }));
