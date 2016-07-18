@@ -20,8 +20,8 @@ module.exports = function (app) {
     app.route('/signin')
         .post(passport.authenticate('local', {
             successRedirect: '/',
-            failureRedirect: '/signin',
-            failureFlash: true
+            failureRedirect: '/signup',
+            failureFlash: false //Will change back to true
         }));
 
     app.get('/signout', control.signout);

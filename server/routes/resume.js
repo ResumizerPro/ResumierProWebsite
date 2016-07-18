@@ -1,6 +1,3 @@
-/**
- * Created by Dominick Martelly on 7/6/2016.
- */
 var control = require('../controllers/resume');
 var resume = require('../models/resume');
 

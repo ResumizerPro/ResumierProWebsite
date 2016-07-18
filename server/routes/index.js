@@ -1,4 +1,5 @@
 var express = require('express');
+var control = require('../controllers/index');
 
 module.exports = function (app) {
     app.use('/scripts_1/', express.static(__dirname + "/../../node_modules/bootstrap/dist/css"));
@@ -6,5 +7,8 @@ module.exports = function (app) {
     app.use('/scripts_3/', express.static(__dirname + "/../../node_modules/angular"));
     app.use('/scripts_4/', express.static(__dirname + "/../../node_modules/bootstrap/dist/js"));
     app.use('/fonts', express.static(__dirname + "/../../node_modules/font-awesome/fonts"));
-    app.use('/', express.static(__dirname + "/../../client"));
+    app.use(express.static(__dirname + "/../../client", {
+        extensions: ['html', 'htm']
+    }));
+    app.get('*', control.directTo);
 };
