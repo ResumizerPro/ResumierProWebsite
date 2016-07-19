@@ -5,6 +5,7 @@ var logger = require('morgan');
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
 var multer = require('multer');
+var flash = require('connect-flash');
 
 module.exports = function () {
     var app = express();
@@ -16,8 +17,9 @@ module.exports = function () {
     app.use(methodOverride());
     app.use(passport.initialize());
     app.use(passport.session());
-    require('./../routes/index')(app);
+    app.use(flash());
     require('./../routes/resume')(app);
     require('./../routes/user')(app);
+    require('./../routes/index')(app);
     return app;
 };

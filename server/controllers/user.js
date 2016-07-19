@@ -1,36 +1,61 @@
 var mongoose = require('mongoose');
-  passport = require('passport');
+passport = require('passport');
 var user = mongoose.model('user');
 
-exports.signup = function(req, res, next) {
-    if(!req.user) {
-        console.log(req.body);
+//noinspection JSUnusedLocalSymbols
+var getErrorMessage = function(err) {
+    var message = '';
+
+    if(err.code) {
+        switch (err.code) {
+            case 11000:
+            case 11001:
+                message = 'Username already exist';
+                break;
+            default:
+                message = "Something went wrong";
+
+        }
+    }
+    else{
+        for (var errName in err.errors) {
+            if (err.errors[errName].message) message = err.errors[errName].message;
+        }
+    }
+    return message;
+};
+
+exports.signup = function (req, res, next) {
+    if (!req.user) {
         var User = new user(req.body);
-        var message = null;
+        console.log(User);
 
         User.provider = 'local';
 
-        User.save(function(err){
-            if(err) {
-                var message = getErrorMessage(err);
-                req.flash('error', message);
+        console.log('test');
+        User.save(function (err) {
+            if (err) {
+                console.log('b');
+                //var message = getErrorMessage(err);
+                //req.flash('error', message);
                 return res.redirect('/signup');
             }
-            req.login(user, function(err){
-
-                if (err) return next (err);
+            req.login(user, function (err) {
+                console.log('a');
+                if (err) return next(err);
                 return res.redirect('/');
             });
         });
     } else {
+        console.log('c');
         return res.redirect('/');
     }
 };
 
-exports.createUser = function(req, res, next){
+exports.createUser = function (req, res, next) {
     var user = new User(req.body);
-    user.save(function(err){
-        if(err){
+    user.save(function (err) {
+        if (err) {
             return next(err);
         } else {
             res.json(user);
@@ -38,24 +63,25 @@ exports.createUser = function(req, res, next){
     });
 };
 
-exports.listUsers = function(req, res, next) {
-    user.find({}, function(err, users) {
+exports.listUsers = function (req, res, next) {
+    user.find({}, function (err, users) {
         if (err) {
             return next(err);
         } else {
             res.json(users);
-        } });
+        }
+    });
 };
 
-exports.read = function(req, res){
+exports.read = function (req, res) {
     var userId = req.params.userId;
-    user.find({_id: userId}, function(err, user) {
+    user.find({_id: userId}, function (err, user) {
         res.json(user);
     });
 };
 
-exports.update = function(req, res, next) {
-    user.findByIdAndUpdate(req.params.userId, req.body, function(err, user) {
+exports.update = function (req, res, next) {
+    user.findByIdAndUpdate(req.params.userId, req.body, function (err, user) {
         if (err) {
             return next(err);
         } else {
@@ -64,13 +90,13 @@ exports.update = function(req, res, next) {
     });
 };
 
-exports.delete = function(req, res, next) {
-    user.remove({_id: req.params.userId}, function(err, user) {
+exports.delete = function (req, res) {
+    user.remove({_id: req.params.userId}, function (err, user) {
         res.json(user);
     });
 
 };
-exports.signout = function(req, res) {
+exports.signout = function (req, res) {
     req.logout();
     res.redirect('/');
 };

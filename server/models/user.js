@@ -1,25 +1,31 @@
 var mongoose = require('mongoose');
+var crypto = require('crypto');
 var passportLocalMongoose = require('passport-local-mongoose');
 
 var Schema = new mongoose.Schema({
-    username: String,
+    username: {
+        type: String,
+        required: true
+    },
     password: String,
-    email: String,salt: {
+    email: String, salt: {
         type: String
     }
 });
-Schema.pre('save', function(next) {
+
+Schema.pre('save', function (next) {
     if (this.password) {
         this.salt = new
             Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
         this.password = this.hashPassword(this.password);
     }
-    next(); });
-Schema.methods.hashPassword = function(password) {
+    next();
+});
+Schema.methods.hashPassword = function (password) {
     return crypto.pbkdf2Sync(password, this.salt, 10000,
         64).toString('base64');
 };
-Schema.methods.authenticate = function(password) {
+Schema.methods.authenticate = function (password) {
     return this.password === this.hashPassword(password);
 };
 
