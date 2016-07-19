@@ -5,6 +5,7 @@
 var http = require('http');
 var fs = require('fs');
 var express = require('express');
+var passport = require('passport');
 var mongoose = require('mongoose'); //To make sure mongoose is on the server
 
 var root = __dirname;
@@ -21,9 +22,7 @@ require('./server/routes/user')(app);
 require('./server/config/express')(app);
 
 //Passport
-var passport = require('passport');
 require('./server/config/passport')(passport);
-
 app.use(passport.initialize());
 
 var modelsPath = root + '/server/models';
