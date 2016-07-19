@@ -13,16 +13,16 @@ var root = __dirname;
 var config = require('./server/config/config');
 require('./server/config/db')(config);
 
-//Passport
-var passport = require('passport');
-require('./server/config/passport')(passport);
-
 //Express
 var app = express();
 require('./server/routes/index')(app);
 require('./server/routes/resume')(app);
 require('./server/routes/user')(app);
 require('./server/config/express')(app);
+
+//Passport
+var passport = require('passport');
+require('./server/config/passport')(passport);
 
 var modelsPath = root + '/server/models';
 fs.readdirSync(modelsPath).forEach(function (file) {
