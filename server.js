@@ -4,7 +4,8 @@
  */
 var http = require('http');
 var fs = require('fs');
-var express = require('express');
+var express = require('./server/config/express');
+var passport = require('passport');
 var mongoose = require('mongoose'); //To make sure mongoose is on the server
 
 var root = __dirname;
@@ -12,13 +13,10 @@ var root = __dirname;
 //Config
 var config = require('./server/config/config');
 require('./server/config/db')(config);
-
-//Passport
-var passport = require('passport');
-require('./server/config/passport')(passport);
-
 //Express
 var app = express();
+//Passport
+require('./server/config/passport')(passport);
 require('./server/routes/resume')(app);
 require('./server/routes/user')(app);
 require('./server/routes/index')(app);
