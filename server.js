@@ -13,13 +13,8 @@ var root = __dirname;
 //Config
 var config = require('./server/config/config');
 require('./server/config/db')(config);
-
 //Express
 var app = express();
-require('./server/routes/index')(app);
-require('./server/routes/resume')(app);
-require('./server/routes/user')(app);
-require('./server/config/express')(app);
 //Passport
 require('./server/config/passport')(passport);
 
