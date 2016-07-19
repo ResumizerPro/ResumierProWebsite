@@ -4,12 +4,12 @@ var user = mongoose.model('user');
 exports.signup = function(req, res, next) {
     if(!req.user) {
         console.log(req.body);
-        var user = new user(req.body);
+        var User = new user(req.body);
         var message = null;
 
-        user.provider = 'local';
+        User.provider = 'local';
 
-        user.save(function(err){
+        User.save(function(err){
             if(err) {
                 var message = getErrorMessage(err);
 
