@@ -34,6 +34,8 @@ exports.signup = function (req, res, next) {
 
         console.log('test');
         User.save(function (err) {
+          console.log('test2');
+
             if (err) {
                 console.log('b');
                 //var message = getErrorMessage(err);
