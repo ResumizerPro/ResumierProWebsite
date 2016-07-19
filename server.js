@@ -19,9 +19,9 @@ require('./server/config/passport')(passport);
 
 //Express
 var app = express();
-require('./server/routes/index')(app);
 require('./server/routes/resume')(app);
 require('./server/routes/user')(app);
+require('./server/routes/index')(app);
 require('./server/config/express')(app);
 
 var modelsPath = root + '/server/models';

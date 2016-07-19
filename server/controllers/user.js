@@ -1,22 +1,22 @@
 var mongoose = require('mongoose');
+passport = require('passport');
 var user = mongoose.model('user');
 
 exports.signup = function(req, res, next) {
     if(!req.user) {
         console.log(req.body);
-        var user = new user(req.body);
-        var message = null;
+        var newUser = new user(req.body);
 
-        user.provider = 'local';
+        newUser.provider = 'local';
 
-        user.save(function(err){
+        newUser.save(function(err){
             if(err) {
                 var message = getErrorMessage(err);
 
                 req.flash('error', message);
                 return res.redirect('/signup');
             }
-            req.login(user, function(err){
+            req.login(newUser, function(err){
                 if (err) return next (err);
                 return res.redirect('/');
             });
@@ -46,14 +46,14 @@ exports.listUsers = function(req, res, next) {
         } });
 };
 
-exports.read = function(req, res){
+exports.listUser = function(req, res){
     var userId = req.params.userId;
     user.find({_id: userId}, function(err, user) {
         res.json(user);
     });
 };
 
-exports.update = function(req, res, next) {
+exports.updateUser = function(req, res, next) {
     user.findByIdAndUpdate(req.params.userId, req.body, function(err, user) {
         if (err) {
             return next(err);
@@ -63,7 +63,7 @@ exports.update = function(req, res, next) {
     });
 };
 
-exports.delete = function(req, res, next) {
+exports.deleteUser = function(req, res) {
     user.remove({_id: req.params.userId}, function(err, user) {
         res.json(user);
     });
