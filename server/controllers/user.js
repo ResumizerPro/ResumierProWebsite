@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+  passport = require('passport');
 var user = mongoose.model('user');
 
 exports.signup = function(req, res, next) {
