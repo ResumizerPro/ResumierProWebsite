@@ -10,6 +10,8 @@ var mongoose = require('mongoose'); //To make sure mongoose is on the server
 
 var root = __dirname;
 
+//Passport
+require('./server/config/passport')(passport);
 //Config
 var config = require('./server/config/config');
 require('./server/config/db')(config);
@@ -21,9 +23,8 @@ require('./server/routes/resume')(app);
 require('./server/routes/user')(app);
 require('./server/config/express')(app);
 
-//Passport
-require('./server/config/passport')(passport);
-app.use(passport.initialize());
+
+
 
 var modelsPath = root + '/server/models';
 fs.readdirSync(modelsPath).forEach(function (file) {
