@@ -16,9 +16,9 @@ module.exports = function () {
     app.use(methodOverride());
     app.use(passport.initialize());
     app.use(passport.session());
-    require('./server/routes/index')(app);
-    require('./server/routes/resume')(app);
-    require('./server/routes/user')(app);
-    require('./server/config/express')(app);
+    require('../routes/index')(app);
+    require('../routes/resume')(app);
+    require('../routes/user')(app);
+    require('../config/express')(app);
     return app;
 };
