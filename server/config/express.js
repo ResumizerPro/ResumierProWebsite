@@ -4,6 +4,7 @@ var compression = require('compression');
 var logger = require('morgan');
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 var multer = require('multer');
 var flash = require('connect-flash');
 

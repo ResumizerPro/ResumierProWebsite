@@ -15,6 +15,7 @@
     "express-session": "latest",
     "file-exists": "^1.0.0",
     "font-awesome": "4.6.3",
+    "jquery": "^3.1.0",
     "method-override": "latest",
     "mongoose": "latest",
     "morgan": "latest",
