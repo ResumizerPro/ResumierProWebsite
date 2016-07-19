@@ -13,11 +13,11 @@ exports.signup = function(req, res, next) {
         User.save(function(err){
             if(err) {
                 var message = getErrorMessage(err);
-
                 req.flash('error', message);
                 return res.redirect('/signup');
             }
             req.login(user, function(err){
+                console.log(user);
                 if (err) return next (err);
                 return res.redirect('/');
             });
