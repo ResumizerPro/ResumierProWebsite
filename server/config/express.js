@@ -17,4 +17,5 @@ module.exports = function (app) {
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
     app.use(methodOverride());
-    app.use(flash());};
+    app.use(flash());
+};
