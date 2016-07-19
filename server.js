@@ -24,6 +24,8 @@ require('./server/config/express')(app);
 var passport = require('passport');
 require('./server/config/passport')(passport);
 
+app.use(passport.initialize());
+
 var modelsPath = root + '/server/models';
 fs.readdirSync(modelsPath).forEach(function (file) {
     if (file.indexOf('.js') >= 0) {
