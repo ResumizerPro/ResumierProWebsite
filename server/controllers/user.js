@@ -17,7 +17,7 @@ exports.signup = function(req, res, next) {
                 return res.redirect('/signup');
             }
             req.login(user, function(err){
-                console.log(user);
+
                 if (err) return next (err);
                 return res.redirect('/');
             });
