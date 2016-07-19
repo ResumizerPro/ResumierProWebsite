@@ -6,8 +6,8 @@ var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
 var multer = require('multer');
 
-module.exports = function (app) {
-    app.set('port', 80);
+module.exports = function () {
+    var app = express();
     app.use(compression());
     app.use(logger('dev'));
     app.use(bodyParser.urlencoded({extended: true}));
@@ -15,4 +15,5 @@ module.exports = function (app) {
     app.use(methodOverride());
     app.use(passport.initialize());
     app.use(passport.session());
+    return app;
 };

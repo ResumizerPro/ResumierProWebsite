@@ -15,7 +15,7 @@ var config = require('./server/config/config');
 require('./server/config/db')(config);
 
 //Express
-var app = express(app);
+var app = express();
 require('./server/routes/index')(app);
 require('./server/routes/resume')(app);
 require('./server/routes/user')(app);
