@@ -8,6 +8,7 @@ var multer = require('multer');
 
 module.exports = function () {
     var app = express();
+    app.set('port', 80);
     app.use(compression());
     app.use(logger('dev'));
     app.use(bodyParser.urlencoded({extended: true}));
