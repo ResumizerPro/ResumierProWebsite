@@ -14,4 +14,5 @@ module.exports = function (app) {
     app.use(bodyParser.json());
     app.use(methodOverride());
     app.use(passport.initialize());
+    app.use(passport.session());
 };
