@@ -4,7 +4,7 @@
  */
 var http = require('http');
 var fs = require('fs');
-var express = require('express');
+var express = require('config/express');
 var passport = require('passport');
 var mongoose = require('mongoose'); //To make sure mongoose is on the server
 
