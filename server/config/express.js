@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var multer = require('multer');
 var flash = require('connect-flash');
+var config = require('./config');
 
 module.exports = function () {
     var app = express();
