@@ -31,3 +31,25 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
     }
 }, true);
 });
+
+angular.module("myApp.controllers", []).controller("RegisterCtrl", function ($scope, resumeService) {
+    // Write your code here
+    $scope.resumes = [];
+
+    $scope.newResumes = {};
+
+    $scope.isEmpty = function(str) {
+      return String(str).length == 0;
+    };
+
+
+
+  $scope.$watch("resumes", function (newValue, oldValue) {
+    if (newValue !== oldValue) {
+      $scope.resumes.map(function(a){
+        console.log(a);
+      });
+      resumeService.put($scope.resumes);
+    }
+}, true);
+});
