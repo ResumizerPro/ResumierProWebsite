@@ -16,6 +16,13 @@ module.exports = function () {
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
     app.use(methodOverride());
+
+    app.use(session({
+    saveUinitialized: true,
+    resave: true,
+    secret: config.sessionSecret
+  }));
+
     app.set('views', __dirname + "/../../client");
     app.set('view engine', 'ejs');
     app.use(passport.initialize());
