@@ -1,72 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
 <!--suppress HtmlUnknownTarget -->
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"/>
-    <title>ResumizerPro - Login</title>
-    <link rel="stylesheet" href="scripts_1/bootstrap.min.css"/>
-    <link rel="stylesheet" href="scripts_2/font-awesome.min.css"/>
-    <link rel="stylesheet" href="css/main.css">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Resumizer Pro</title>
+    <!-- CUSTOM CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.3/css/uikit.min.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap Core CSS -->
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Theme CSS -->
+    <link href="css/agency.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 <body>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#"><h1>ResumizerPro</h1></a>
-        </div>
+  <!-- Navigation -->
+  <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+      <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header page-scroll">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+              </button>
+              <a class="navbar-brand page-scroll" href="#page-top">Resumizer Pro</a>
+          </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="/" class="navitem">Home </a></li>
-                <li><a href="/createresume" class="navitem">Create Resumes</a></li>
-                <li><a href="#" class="navitem">Search Resumes</a></li>
-                <li><a href="#" class="navitem">About Us!</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="/login" class="navitem">Login<span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
-<div class="container">
-    <form class="form-horizontal login" action="/signin" method="post">
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-            <div class="col-sm-10">
-                <input type="email" class="form-control loginform" id="inputEmail3" placeholder="Email">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-            <div class="col-sm-10">
-                <input type="password" class="form-control loginform" id="inputPassword3" placeholder="Password">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> Remember me
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default">Sign in</button>
-            </div>
-        </div>
-        <a href="/signup" class="btn btn-default">Sign Up</a>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                  <li class="hidden">
+                      <a href="#page-top"></a>
+                  </li>
+                  <li>
+                      <a class="page-scroll" href="#create">Create a Resume</a>
+                  </li>
+                  <li>
+                      <a class="page-scroll" href="#samples">Browse Sample Resumes</a>
+                  </li>
+                  <li>
+                      <a class="page-scroll" href="#contact">Contact</a>
+                  </li>
+              </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+  </nav>
 
-</form>
-</div>
+
+
+
+  <section id="create">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <h2 class="section-heading">Create a Resume</h2>
+                  <h3 class="section-subheading text-muted">Click an option to get started.</h3>
+              </div>
+          </div>
+          <div class="row text-center">
+              <div class="col-md-3">
+                  <span class="fa-stack fa-4x">
+                      <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                      <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                  </span>
+                  <h4 class="service-heading"><a href="chronological.html">Chronological Resume</a></h4>
+                  <p class="text-muted"><strong>What is a Chronological Resume?</strong> Chronological resumes list work history chronologically, starting with the most recent job then listing them to the earliest job. Most employers prefer this format because it provides a quick overview of a candidate's work history, with the most recent positions at the top. This is the most commonly used resume format.</p>
+        <p class="text-muted"><strong>Is this resume type right for me?</strong> If you have a solid work history, your experience is aligned with the job you are applying to, and you have no lapses between employment, use this format.</p>
+      </div>
+              <div class="col-md-3">
+                  <span class="fa-stack fa-4x">
+                      <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                      <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                  </span>
+                  <h4 class="service-heading"><a href="functional.html">Functional Resume</a></h4>
+                  <p class="text-muted"><strong>What is a Functional Resume?</strong> Functional resumes place skills and experience first. Rather than leading with experience like a chronological resume, this type of resume de-emphasizes the dates worked. Employment history is comes later, and is listed beneath the details of a job seeker's skills.</p>
+        <p class="text-muted"><strong>Is this resume type right for me?</strong> In between careers? Got lapses in employment? Are you a recent college graduate that has limited work experience? Do you a diverse background with no clear career path? If you answered yes to any of these, this is the most effective type of resume.</p>
+      </div>
+              <div class="col-md-3">
+                  <span class="fa-stack fa-4x">
+                      <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                      <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                  </span>
+                  <h4 class="service-heading"><a href="combination.html">Combination Resume</a></h4>
+                  <p class="text-muted"><strong>What is a Combination Resume?</strong> Combination resumes allow a fusion of skills and experience, while also featuring a chronological listing of work history. The combination resume presents a way of tailoring the resume to a prospective job opening to tell a story.</p>
+        <p class="text-muted"><strong>Is this resume type right for me?</strong> Show a hiring manager you can fit their job opening, and use this resume to detail work experience and skills to nab that position.</p>
+      </div>
+      <div class="col-md-3">
+                  <span class="fa-stack fa-4x">
+                      <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                      <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                  </span>
+                  <h4 class="service-heading"><a href="targeted.html">Targeted Resume</a></h4>
+                  <p class="text-muted"><strong>What is a Targeted Resume?</strong> Targeted resumes are customized in detail to the prospective job being sought. Every component from the objective, to the qualifications to educational experience closely mirrors the requirements of the job position.</p>
+        <p class="text-muted"><strong>Is this resume type right for me?</strong> These resumes can generate the best results as the qualifications and experience you outline mirror the prospective job opening closely. However, they are also very time consuming as a new resume is required for each job. However, be as accurate as possible and make sure not to embellish career highlights simply to snag the open job.</p>
+      </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- jQuery -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+  <!-- Contact Form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+
+  <!-- CUSTOM JAVASCRIPT -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.3/js/uikit.min.js"></script>
+
+  <!-- Theme JavaScript -->
+  <script src="js/agency.min.js"></script>
 </body>
+</html>
