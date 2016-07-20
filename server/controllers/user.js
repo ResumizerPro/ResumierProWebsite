@@ -25,6 +25,10 @@ var getErrorMessage = function(err) {
     return message;
 };
 
+exports.login = function(req, res, next){
+  res.render("login");
+}
+
 exports.signup = function (req, res, next) {
     if (!req.user) {
         var User = new user(req.body);

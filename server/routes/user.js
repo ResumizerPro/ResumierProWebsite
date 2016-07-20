@@ -6,11 +6,14 @@ module.exports = function (app) {
     app.route('/signup')
         .post(control.signup);
 
+
     app.route('/users/:userId')
         .get(control.read)
         .put(control.update)
         .delete(control.delete);
 
+    app.route('/login')
+        .get(users.login);
     app.post('/login', function (req, res) {
         console.log(req.user);
         res.status('login').send({user: req.user});
