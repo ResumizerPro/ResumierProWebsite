@@ -24,7 +24,7 @@ module.exports = function (app) {
         .post(passport.authenticate('local', {
             successRedirect: '/',
             failureRedirect: '/login',
-            failureFlash: false
+            failureFlash: true
         }));
 
     app.route('/signout')

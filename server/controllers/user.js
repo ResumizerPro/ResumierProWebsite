@@ -31,6 +31,8 @@ exports.login = function (req, res, next) {
       title: 'Sign-in Form',
       messages: req.flash('error') || req.flash('info')
     });
+  }else{
+    res.redirect('/');
   }
 };
 
