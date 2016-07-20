@@ -25,11 +25,15 @@ var getErrorMessage = function(err) {
     return message;
 };
 
-exports.login = function(req, res, next){
-  res.render("login", {
-    messages: req.flash('error') || req.flash('info')
-  });
-}
+exports.login = function (req, res, next) {
+  if(!req.user) {
+    res.render ('login', {
+      title: 'Sign-in Form',
+      messages: req.flash('error') || req.flash('info')
+    });
+  }
+};
+
 
 exports.signup = function (req, res, next) {
     if (!req.user) {

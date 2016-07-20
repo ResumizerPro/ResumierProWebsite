@@ -14,6 +14,7 @@ module.exports = function (app) {
 
     app.route('/login')
         .get(control.login);
+
     app.post('/login', function (req, res) {
         console.log(req.user);
         res.status('login').send({user: req.user});
