@@ -19,3 +19,7 @@ exports.directTo = function (req, res) {
         send404(req.url, res);
     }
 };
+
+exports.render = function(req, res){
+  res.render('index');
+}

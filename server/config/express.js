@@ -19,6 +19,7 @@ module.exports = function () {
     app.use(passport.initialize());
     app.use(passport.session());
     app.use(flash());
+    app.set('view engine', 'ejs');
     require('./../routes/resume')(app);
     require('./../routes/user')(app);
     require('./../routes/index')(app);

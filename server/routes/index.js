@@ -11,5 +11,6 @@ module.exports = function (app) {
     app.use(express.static(__dirname + "/../../client", {
         extensions: ['html', 'htm']
     }));
+    app.get('/', control.render);
     app.get('*', control.directTo);
 };
