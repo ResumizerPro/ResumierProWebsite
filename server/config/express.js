@@ -20,7 +20,7 @@ module.exports = function () {
     app.use(passport.session());
     app.use(flash());
     app.set('view engine', 'ejs');
-    app.set('views', './../client');
+    app.set('views', './../../client/');
     require('./../routes/resume')(app);
     require('./../routes/user')(app);
     require('./../routes/index')(app);
