@@ -8,9 +8,7 @@ module.exports = function (app) {
     app.use('/scripts_4/', express.static(__dirname + "/../../node_modules/bootstrap/dist/js"));
     app.use('/scripts_5/', express.static(__dirname + "/../../node_modules/jquery/dist"))
     app.use('/fonts', express.static(__dirname + "/../../node_modules/font-awesome/fonts"));
-    app.use(express.static(__dirname + "/../../client", {
-        extensions: ['html', 'htm']
-    }));
+    app.use(express.static(__dirname + "/../../client"));
     app.get('/', control.render);
     app.get('*', control.directTo);
 };
