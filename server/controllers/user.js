@@ -26,7 +26,9 @@ var getErrorMessage = function(err) {
 };
 
 exports.login = function(req, res, next){
-  res.render("login");
+  res.render("login", {
+    message: req.flash('error') || req.flash('info')
+  });
 }
 
 exports.signup = function (req, res, next) {
