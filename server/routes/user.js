@@ -6,7 +6,6 @@ module.exports = function (app) {
     app.route('/signup')
         .post(control.signup);
 
-
     app.route('/users/:userId')
         .get(control.read)
         .put(control.update)

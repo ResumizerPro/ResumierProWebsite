@@ -11,10 +11,10 @@ exports.directTo = function (req, res) {
     console.log(req.url);
     //Check if the file exists
     if (fileExists('client' + req.url + '.html')) {
-        res.render(req.url);
+        res.render(req.url + '.html');
     }
     else if (fileExists('client' + req.url + '.ejs')) {
-        res.render(req.url);
+        res.render(req.url.slice(1));
     }
     //404
     else {
@@ -26,14 +26,3 @@ exports.renderIndex = function (req, res) {
     res.render('index');
 };
 
-exports.renderFunctional = function (req, res) {
-    res.render('functional');
-};
-
-exports.renderCombination = function (req, res) {
-    res.render('combination');
-};
-
-exports.renderTargeted = function (req, res) {
-    res.render('targeted');
-};

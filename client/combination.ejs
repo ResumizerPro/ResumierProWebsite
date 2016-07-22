@@ -10,14 +10,12 @@
     <meta name="author" content="">
 
     <title>Resumizer Pro</title>
-    <!-- CUSTOM CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.3/css/uikit.min.css" rel="stylesheet" type="text/css">
-    <!-- Bootstrap Core CSS -->
 
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link href="scripts_1/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="scripts_2/font-awesome.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -45,7 +43,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Resumizer Pro</a>
+                <a class="navbar-brand page-scroll" href="index.html">Resumizer Pro</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -58,13 +56,10 @@
                         <a class="page-scroll" href="#create">Create a Resume</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#samples">Browse Sample Resumes</a>
+                        <a class="page-scroll" href="#samples">Choose Template</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="/about">About Us</a>
                     </li>
                 </ul>
             </div>
@@ -78,18 +73,16 @@
         <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in">Welcome to the Resumizer Pro!</div>
-                <div class="intro-heading">We are here to help you</div>
-                <a data-uk-modal="{target:'#login'}" class="btn btn-xl">Login</a>
+                <div class="intro-heading">Combination Resume Selected</div>
+                <!--
+				<a href="#create" class="page-scroll btn btn-xl">Login</a>
+				-->
             </div>
         </div>
     </header>
 
     <!-- Create a Resume Section -->
-    <div id="login" class="uk-modal" style="display: none;">
-      <div class="uk-modal-dialog uk-modal-close" style="width:940px; height: 600px; margin-top:10%; border-radius: 9%">
-        <iframe style="width: 100%; height:100%;" scrolling="auto" frameborder="0" src="login" hspace="0"></iframe>
-      </div>
-    </div>
+	<!--
     <section id="create">
         <div class="container">
             <div class="row">
@@ -104,7 +97,7 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading"><a href="chronological">Chronological Resume</a></h4>
+                    <h4 class="service-heading"><a href="chronological.html">Chronological Resume</a></h4>
                     <p class="text-muted"><strong>What is a Chronological Resume?</strong> Chronological resumes list work history chronologically, starting with the most recent job then listing them to the earliest job. Most employers prefer this format because it provides a quick overview of a candidate's work history, with the most recent positions at the top. This is the most commonly used resume format.</p>
 					<p class="text-muted"><strong>Is this resume type right for me?</strong> If you have a solid work history, your experience is aligned with the job you are applying to, and you have no lapses between employment, use this format.</p>
 				</div>
@@ -113,7 +106,7 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading"><a href="functional">Functional Resume</a></h4>
+                    <h4 class="service-heading"><a href="functional.ejs">Functional Resume</a></h4>
                     <p class="text-muted"><strong>What is a Functional Resume?</strong> Functional resumes place skills and experience first. Rather than leading with experience like a chronological resume, this type of resume de-emphasizes the dates worked. Employment history is comes later, and is listed beneath the details of a job seeker's skills.</p>
 					<p class="text-muted"><strong>Is this resume type right for me?</strong> In between careers? Got lapses in employment? Are you a recent college graduate that has limited work experience? Do you a diverse background with no clear career path? If you answered yes to any of these, this is the most effective type of resume.</p>
 				</div>
@@ -122,7 +115,7 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading"><a href="combination">Combination Resume</a></h4>
+                    <h4 class="service-heading"><a href="combination.html">Combination Resume</a></h4>
                     <p class="text-muted"><strong>What is a Combination Resume?</strong> Combination resumes allow a fusion of skills and experience, while also featuring a chronological listing of work history. The combination resume presents a way of tailoring the resume to a prospective job opening to tell a story.</p>
 					<p class="text-muted"><strong>Is this resume type right for me?</strong> Show a hiring manager you can fit their job opening, and use this resume to detail work experience and skills to nab that position.</p>
 				</div>
@@ -131,21 +124,21 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading"><a href="targeted">Targeted Resume</a></h4>
+                    <h4 class="service-heading"><a href="targeted.ejs">Targeted Resume</a></h4>
                     <p class="text-muted"><strong>What is a Targeted Resume?</strong> Targeted resumes are customized in detail to the prospective job being sought. Every component from the objective, to the qualifications to educational experience closely mirrors the requirements of the job position.</p>
 					<p class="text-muted"><strong>Is this resume type right for me?</strong> These resumes can generate the best results as the qualifications and experience you outline mirror the prospective job opening closely. However, they are also very time consuming as a new resume is required for each job. However, be as accurate as possible and make sure not to embellish career highlights simply to snag the open job.</p>
 				</div>
             </div>
         </div>
     </section>
-
+	-->
     <!-- Sample Resume Grid Section -->
     <section id="samples" class="bg-navy">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading" style="color:#ffffff">Browse Sample Resumes</h2>
-                    <h3 class="section-subheading text-muted">Take a Look to Get Some Ideas</h3>
+                    <h2 class="section-heading" style="color:#ffffff">Choose a Template to Get Started</h2>
+                    <h3 class="section-subheading text-muted">Which Do You Want?</h3>
                 </div>
             </div>
             <div class="row">
@@ -159,10 +152,7 @@
                         <img src="img/samples/samples1.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4 style="color:#ffffff">Sample Resume 1</h4>
-						<!--
-                        <p class="text-muted">Graphic Design</p>
-						-->
+                        <h4 style="color:#ffffff">Template 1</h4>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -175,7 +165,7 @@
                         <img src="img/samples/samples2.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4 style="color:#ffffff">Sample Resume 2</h4>
+                        <h4 style="color:#ffffff">Template 2</h4>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -188,7 +178,7 @@
                         <img src="img/samples/samples3.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4 style="color:#ffffff">Sample Resume 3</h4>
+                        <h4 style="color:#ffffff">Template 3</h4>
                     </div>
                 </div>
             </div>
@@ -341,10 +331,10 @@
     </div>
 
     <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="scripts_5/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="test/javascript" src="scripts_4/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
@@ -352,9 +342,6 @@
     <!-- Contact Form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
-
-    <!-- CUSTOM JAVASCRIPT -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.3/js/uikit.min.js"></script>
 
     <!-- Theme JavaScript -->
     <script src="js/agency.min.js"></script>
