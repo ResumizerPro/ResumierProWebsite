@@ -8,9 +8,8 @@ var session = require('express-session');
 var multer = require('multer');
 var flash = require('connect-flash');
 
-module.exports = function () {
-    var app = express();
-    app.set('port', 80);
+module.exports = function (app) {
+    app.set('port', process.env.PORT || 80);
     app.use(compression());
     app.use(logger('dev'));
     app.use(bodyParser.urlencoded({extended: true}));
@@ -22,5 +21,4 @@ module.exports = function () {
     require('./../routes/resume')(app);
     require('./../routes/user')(app);
     require('./../routes/index')(app);
-    return app;
 };

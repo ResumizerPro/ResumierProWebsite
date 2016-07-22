@@ -11,6 +11,9 @@ module.exports = function (app) {
         .put(control.update)
         .delete(control.delete);
 
+    app.route('/users')
+        .get(control.listUsers);
+
     app.post('/login', function (req, res) {
         console.log(req.user);
         res.status('login').send({user: req.user});
@@ -20,7 +23,8 @@ module.exports = function (app) {
         .post(passport.authenticate('local', {
             successRedirect: '/',
             failureRedirect: '/login',
-            failureFlash: false
+            successFlash: 'Welcome!',
+            failureFlash: 'Failure...'
         }));
 
     app.route('/signout')

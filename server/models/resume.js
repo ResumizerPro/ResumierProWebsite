@@ -5,4 +5,4 @@ var Schema = new mongoose.Schema({
     qualifications: [String] //List of strings
 });
 
-mongoose.model('resume', Schema);
+mongoose.model('myStub', Schema);

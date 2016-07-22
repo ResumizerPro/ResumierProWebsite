@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-passport = require('passport');
 var user = mongoose.model('user');
 
 //noinspection JSUnusedLocalSymbols
@@ -36,8 +35,8 @@ exports.signup = function (req, res, next) {
         User.save(function (err) {
             if (err) {
                 console.log('b');
-                //var message = getErrorMessage(err);
-                //req.flash('error', message);
+                var message = getErrorMessage(err);
+                req.flash('error', message);
                 return res.redirect('/signup');
             }
             req.login(User, function (err) {
@@ -50,17 +49,6 @@ exports.signup = function (req, res, next) {
         console.log('c');
         return res.redirect('/');
     }
-};
-
-exports.createUser = function (req, res, next) {
-    var user = new User(req.body);
-    user.save(function (err) {
-        if (err) {
-            return next(err);
-        } else {
-            res.json(user);
-        }
-    });
 };
 
 exports.listUsers = function (req, res, next) {

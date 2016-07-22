@@ -2,10 +2,9 @@
  * Created by Dominick Martelly on 7/9/2016.
  */
 
-var passport = require('passport'),
-    mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
-module.exports = function() {
+module.exports = function(passport) {
     var User = mongoose.model('user');
 
     passport.serializeUser(function(user, done) {

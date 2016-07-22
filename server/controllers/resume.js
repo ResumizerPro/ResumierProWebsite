@@ -1,8 +1,9 @@
 var mongoose = require('mongoose');
-var resume = mongoose.model('resume');
+var myStub = sinon.stub(mongoose.Model, METHODNAME);
+var myStub = mongoose.model('../models/backend_stub.js');
 
 exports.findAllResume = function(req, res) {
-    resume.find({}, function(err, resume) {
+    myStub.find({}, function(err, resume) {
         if (err) {
             throw new Error(err);
         }
@@ -11,7 +12,7 @@ exports.findAllResume = function(req, res) {
 };
 
 exports.findOneResume = function(req, res) {
-    resume.findById(req.params.id, function(err, resume_s) {
+    myStub.findById(req.params.id, function(err, resume_s) {
         if (err) {
             throw new Error(err);
         }
@@ -23,7 +24,7 @@ exports.addResume = function(req, res) {
     console.log(req.params);
     console.log(req.query);
     console.log(req.body); //Find out why body is undefined
-    var document = new resume(req.query); //Change back to req.body after testing
+    var document = new myStub(req.query); //Change back to req.body after testing
 
     document.save(function(err, resume) {
         if (err) {
@@ -34,7 +35,7 @@ exports.addResume = function(req, res) {
 };
 
 exports.removeResume = function(req, res) {
-    resume.findByIdAndRemove(req.params.id, function(err, resume) {
+    myStub.findByIdAndRemove(req.params.id, function(err, resume) {
         if (err) {
             throw new Error(err);
         }
