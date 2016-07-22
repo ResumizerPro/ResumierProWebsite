@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var resume = mongoose.model('resume');
+var path = require('path');
 
 exports.findAllResume = function(req, res) {
     resume.find({}, function(err, resume) {
@@ -43,5 +44,5 @@ exports.removeResume = function(req, res) {
 };
 
 exports.gettemplate = function(req, res) {
-  res.sendfile('/../../templates/bigfile.pdf');
+  res.sendfile(path.resolve('/../../templates/bigfile.pdf'));
 };
