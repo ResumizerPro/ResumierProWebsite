@@ -9,8 +9,7 @@ var multer = require('multer');
 var flash = require('connect-flash');
 var config = require('./config');
 
-module.exports = function () {
-    var app = express();
+module.exports = function (app) {
     app.set('port', 80);
     app.use(compression());
     app.use(logger('dev'));
@@ -32,5 +31,4 @@ module.exports = function () {
     require('./../routes/resume')(app);
     require('./../routes/user')(app);
     require('./../routes/index')(app);
-    return app;
 };

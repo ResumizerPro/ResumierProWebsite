@@ -1,7 +1,3 @@
-/**
- * Created by Dominick Martelly on 7/9/2016.
- */
-
 var passport = require('passport'),
     mongoose = require('mongoose');
 
