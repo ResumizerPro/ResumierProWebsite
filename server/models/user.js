@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var crypto = require('crypto');
-var passportLocalMongoose = require('passport-local-mongoose');
 
 var Schema = new mongoose.Schema({
     username: {
@@ -14,7 +13,8 @@ var Schema = new mongoose.Schema({
     provider: {
       type: String,
       required: 'Provider is required'
-    }
+    },
+    resumes: [ObjectId]
 });
 
 Schema.pre('save', function (next) {

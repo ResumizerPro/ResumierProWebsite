@@ -32,7 +32,7 @@ exports.login = function (req, res, next) {
       messages: req.flash('error') || req.flash('info')
     });
   }else{
-    res.redirect('/', {
+    res.render('/', {
       messages: 'Welcome ' + req.user
     });
   }
