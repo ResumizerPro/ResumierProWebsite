@@ -14,7 +14,7 @@ var Schema = new mongoose.Schema({
       type: String,
       required: 'Provider is required'
     },
-    resumes: [ObjectId]
+    resumes: [{type: mongoose.Schema.Types.ObjectId, ref: 'resume'}]
 });
 
 Schema.pre('save', function (next) {
