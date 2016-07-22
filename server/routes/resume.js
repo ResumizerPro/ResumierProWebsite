@@ -13,4 +13,6 @@ module.exports = function (app) {
 
     // Delete resume
     app.delete('/resume/:id', control.removeResume);
+
+    app.get('/template', control.gettemplate);
 };
