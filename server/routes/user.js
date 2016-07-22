@@ -23,7 +23,7 @@ module.exports = function (app) {
     app.route('/users')
         .get(control.listUsers);
 
-    app.route()
+    app.route('/createresume')
         .get(control.createresume)
 
     app.route('/signin')
