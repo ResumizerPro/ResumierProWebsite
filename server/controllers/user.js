@@ -32,7 +32,9 @@ exports.login = function (req, res, next) {
       messages: req.flash('error') || req.flash('info')
     });
   }else{
-    res.redirect('/');
+    res.redirect('/', {
+      messages: 'Welcome ' + req.user
+    });
   }
 };
 
@@ -48,8 +50,6 @@ exports.signup = function (req, res, next) {
         User.save(function (err) {
             if (err) {
                 console.log('b');
-                //var message = getErrorMessage(err);
-                //req.flash('error', message);
                 return res.redirect('/signup');
             }
             req.login(User, function (err) {
