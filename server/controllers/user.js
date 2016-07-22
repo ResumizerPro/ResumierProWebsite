@@ -32,35 +32,39 @@ exports.login = function (req, res, next) {
       messages: req.flash('error') || req.flash('info')
     });
   }else{
-    res.redirect('/');
+    res.redirect('/', {
+      messages: 'Welcome ' + req.user
+    });
   }
 };
 
+exports.signup_render = function(req, res, next){
+    res.render('signup', {
+      title: 'Sign-up Form',
+      message: "get fucked"
+    });
+};
 
 exports.signup = function (req, res, next) {
     if (!req.user) {
         var User = new user(req.body);
         console.log(User);
-
         User.provider = 'local';
-
         console.log('test');
         User.save(function (err) {
             if (err) {
                 console.log('b');
-                //var message = getErrorMessage(err);
-                //req.flash('error', message);
-                return res.redirect('/signup');
+                res.render('signup');
             }
             req.login(User, function (err) {
                 console.log('a');
                 if (err) return next(err);
-                return res.redirect('/');
+                res.render('/');
             });
         });
     } else {
         console.log('c');
-        return res.redirect('/');
+        res.render('/');
     }
 };
 

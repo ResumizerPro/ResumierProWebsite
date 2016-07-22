@@ -4,6 +4,7 @@ var control = require('../controllers/user');
 module.exports = function (app) {
 
     app.route('/signup')
+        .get(control.signup_render)
         .post(control.signup);
 
     app.route('/users/:userId')
@@ -19,9 +20,13 @@ module.exports = function (app) {
         res.status('login').send({user: req.user});
     });
 
+    app.route('/users')
+        .get(control.listUsers);
+        
     app.route('/signin')
         .post(passport.authenticate('local', {
             successRedirect: '/',
+            successFlash: true,
             failureRedirect: '/login',
             failureFlash: true
         }));
