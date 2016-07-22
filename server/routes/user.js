@@ -24,7 +24,7 @@ module.exports = function (app) {
         .get(control.listUsers);
 
     app.route('/createresume')
-        .get(control.createresume);
+        .get(control.createresume)
         .post(control.createresume);
 
     app.route('/signin')
