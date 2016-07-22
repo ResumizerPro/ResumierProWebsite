@@ -22,11 +22,10 @@ module.exports = function (app) {
 
     app.route('/users')
         .get(control.listUsers);
-        
+
     app.route('/signin')
         .post(passport.authenticate('local', {
             successRedirect: '/',
-            successFlash: true,
             failureRedirect: '/login',
             failureFlash: true
         }));
