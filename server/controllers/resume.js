@@ -44,5 +44,5 @@ exports.removeResume = function(req, res) {
 };
 
 exports.gettemplate = function(req, res) {
-  res.sendfile(path.resolve('/../../templates/bigfile.pdf'));
+  res.sendfile(path.resolve(__dirname+ '/../../templates/bigfile.pdf'));
 };
