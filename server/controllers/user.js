@@ -38,14 +38,15 @@ exports.login = function (req, res, next) {
   }
 };
 
+exports.signup = function(req, res, next){
+    res.render('signup');
+};
 
 exports.signup = function (req, res, next) {
     if (!req.user) {
         var User = new user(req.body);
         console.log(User);
-
         User.provider = 'local';
-
         console.log('test');
         User.save(function (err) {
             if (err) {

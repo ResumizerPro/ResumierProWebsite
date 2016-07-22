@@ -4,6 +4,7 @@ var control = require('../controllers/user');
 module.exports = function (app) {
 
     app.route('/signup')
+        .get(control.signup)
         .post(control.signup);
 
 
