@@ -25,6 +25,7 @@ module.exports = function (app) {
 
     app.route('/createresume')
         .get(control.createresume);
+        .post(control.createresume);
 
     app.route('/signin')
         .post(passport.authenticate('local', {
