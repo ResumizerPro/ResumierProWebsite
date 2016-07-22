@@ -38,7 +38,7 @@ exports.login = function (req, res, next) {
   }
 };
 
-exports.signup = function(req, res, next){
+exports.signup_render = function(req, res, next){
     res.render('signup');
 };
 
