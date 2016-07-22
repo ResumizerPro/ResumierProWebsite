@@ -4,6 +4,7 @@ var Schema = new mongoose.Schema({
     isPublic: Boolean, //is visible to the public
     resume_type: String, //functional, targeted, combinational
     qualifications: [String], //
+    createdBy: {type: mongoose.Schema.Types.ObjectId, ref: 'user'},
 
     name: String,
     email: String,
@@ -13,7 +14,7 @@ var Schema = new mongoose.Schema({
         house_number: String,
         street_name: String,
         state: String,
-        zip: Number,
+        zip: Number
     },
     education: String
 });
