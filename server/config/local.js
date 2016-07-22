@@ -8,19 +8,17 @@ module.exports = function() {
             if(err){
                 return done(err);
             }
-            if(!user){
+            if(!User){
                 return done(null, false, {
                     message: 'Unknown User'
                 });
             }
-            if (!user.authenticate(password)) {
+            if (!User.authenticate(password)) {
                 return done(null, false, {
                     message: 'Invalid password'
                 });
             }
-            return done(null, user {
-                    message: 'Welcome!'
-            });
+            return done(null, User);
         });
     }));
 };
