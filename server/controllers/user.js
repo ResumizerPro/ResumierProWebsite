@@ -50,7 +50,7 @@ exports.signup = function (req, res, next) {
         User.save(function (err) {
             if (err) {
                 console.log('b');
-                res.render('/signup');
+                res.render('signup');
             }
             req.login(User, function (err) {
                 console.log('a');
