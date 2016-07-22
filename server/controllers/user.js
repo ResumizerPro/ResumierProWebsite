@@ -50,17 +50,17 @@ exports.signup = function (req, res, next) {
         User.save(function (err) {
             if (err) {
                 console.log('b');
-                return res.render('/signup');
+                res.render('/signup');
             }
             req.login(User, function (err) {
                 console.log('a');
                 if (err) return next(err);
-                return res.render('/');
+                res.render('/');
             });
         });
     } else {
         console.log('c');
-        return res.render('/');
+        res.render('/');
     }
 };
 
