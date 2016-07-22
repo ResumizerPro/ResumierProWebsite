@@ -4,7 +4,6 @@ var passport = require('passport'),
 
 module.exports = function() {
     passport.use(new LocalStrategy(function(email, password, done){
-      console.log(email);
         User.findOne({email: email}, function(err,user){
             if(err){
                 return done(err);
@@ -19,7 +18,9 @@ module.exports = function() {
                     message: 'Invalid password'
                 });
             }
-            return done(null, user);
+            return done(null, user {
+                    message: 'Welcome!'
+            });
         });
     }));
 };

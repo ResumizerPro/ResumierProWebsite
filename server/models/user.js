@@ -10,6 +10,10 @@ var Schema = new mongoose.Schema({
     password: String,
     email: String, salt: {
         type: String
+    },
+    provider: {
+      type: String,
+      required: 'Provider is required'
     }
 });
 
