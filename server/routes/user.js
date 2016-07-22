@@ -23,6 +23,9 @@ module.exports = function (app) {
     app.route('/users')
         .get(control.listUsers);
 
+    app.route()
+        .get(control.createresume)
+
     app.route('/signin')
         .post(passport.authenticate('local', {
             successRedirect: '/',

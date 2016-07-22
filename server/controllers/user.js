@@ -45,6 +45,11 @@ exports.signup_render = function(req, res, next){
     });
 };
 
+
+exports.createresume = function(req, res, next){
+    return res.render('create_template');
+}
+
 exports.signup = function (req, res, next) {
     if (!req.user) {
         var User = new user(req.body);
