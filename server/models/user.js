@@ -29,6 +29,10 @@ Schema.methods.authenticate = function (password) {
     return this.password === this.hashPassword(password);
 };
 
+Schema.set('toJSON', {
+     getters: true,
+     virtuals: true
+   });
 //This plugin is used for authentication for the password since it is encrypted
 Schema.plugin(passportLocalMongoose);
 
