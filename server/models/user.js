@@ -37,7 +37,6 @@ Schema.set('toJSON', {
      getters: true,
      virtuals: true
    });
-//This plugin is used for authentication for the password since it is encrypted
-Schema.plugin(passportLocalMongoose);
+
 
 mongoose.model('user', Schema);
