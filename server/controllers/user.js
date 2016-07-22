@@ -41,7 +41,7 @@ exports.login = function (req, res, next) {
 exports.signup_render = function(req, res, next){
     res.render('signup', {
       title: 'Sign-up Form',
-      messages: 'get fucked'
+      messages: "get fucked"
     });
 };
 
