@@ -21,8 +21,9 @@ module.exports = function (app) {
         res.status('login').send({user: req.user});
     });
 
-    app.route('users')
+    app.route('/users')
         .get(control.listUsers);
+        
     app.route('/signin')
         .post(passport.authenticate('local', {
             successRedirect: '/',
