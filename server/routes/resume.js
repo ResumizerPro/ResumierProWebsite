@@ -2,15 +2,15 @@ var control = require('../controllers/resume');
 var resume = require('../models/resume');
 
 module.exports = function (app) {
-    // Find all resumes
-    app.get('/resume', control.findAllResume);
+    app.route('/resume')
+        .get(control.findAllResumes)
+        .post(control.addResume);
 
-    // Find one resume
-    app.get('/resume/:id', control.findOneResume);
+    app.route('/resume/:id')
+        .get(control.findOneResume)
+        .put(control.updateResume)
+        .delete(control.removeResume);
 
-    // Add resume
-    app.post('/resume', control.addResume);
-
-    // Delete resume
-    app.delete('/resume/:id', control.removeResume);
+    app.route('/template')
+        .get(control.getTemplate);
 };

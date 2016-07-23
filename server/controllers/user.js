@@ -1,11 +1,10 @@
 var mongoose = require('mongoose');
 var user = mongoose.model('user');
 
-//noinspection JSUnusedLocalSymbols
-var getErrorMessage = function(err) {
+var getErrorMessage = function (err) {
     var message = '';
 
-    if(err.code) {
+    if (err.code) {
         switch (err.code) {
             case 11000:
             case 11001:
@@ -16,43 +15,102 @@ var getErrorMessage = function(err) {
 
         }
     }
-    else{
+    else {
         for (var errName in err.errors) {
-            if (err.errors[errName].message) message = err.errors[errName].message;
+            if (err.errors[errName].message) {
+                message = err.errors[errName].message;
+            }
         }
     }
+    console.log(message);
     return message;
 };
 
-exports.signup = function (req, res, next) {
+exports.success = function (req, res) {
+
+    res.render('success', {
+        title: 'Successful Login!',
+        messages: "Please exit this menu."
+    });
+
+};
+
+exports.script = function (req, res) {
+    res.send(__dirname + "/../../node_modules/angular")
+};
+
+exports.login = function (req, res) {
     if (!req.user) {
-        var User = new user(req.body);
-        console.log(User);
-
-        User.provider = 'local';
-
-        console.log('test');
-        User.save(function (err) {
-            if (err) {
-                console.log('b');
-                var message = getErrorMessage(err);
-                req.flash('error', message);
-                return res.redirect('/signup');
-            }
-            req.login(User, function (err) {
-                console.log('a');
-                if (err) return next(err);
-                return res.redirect('/');
-            });
+        res.render('login', {
+            title: 'Sign-in Form',
+            messages: req.flash('error') || req.flash('info')
         });
     } else {
-        console.log('c');
-        return res.redirect('/');
+        res.render('success', {
+            title: 'WHY ARE U FUCKIN HERE MATE',
+            messages: 'Welcome ' + req.user
+        });
     }
 };
 
+exports.signup_render = function (req, res) {
+    res.render('signup', {
+        title: 'Sign-up Form',
+        message: ""
+    });
+};
+
+
+exports.createresume = function (req, res) {
+    return res.render('create_template');
+};
+
+exports.signup = function (req, res, next) {
+    if (req.user) { //If the user is already signed in
+        console.log('c');
+        res.render('success', {
+            title: 'You already registered silly!',
+            message: "GTFO"
+        });
+    } else {
+        var User = new user(req.body);
+        console.log(User);
+        User.provider = 'local';
+        User.save(function (err) {
+            if (err) { //If the creation of the new user didn't work
+                res.render('signup', {
+                    title: 'Sign-up Form',
+                    message: getErrorMessage(err)
+                });
+            }
+            else {
+                req.login(User, function (err) {
+                    if (err) return next(err);
+                    else {
+                        res.render('success', {
+                            title: 'Successful Registration!',
+                            messages: "You are logged in. Please exit this menu."
+                        });
+                    }
+                });
+            }
+        });
+    }
+};
+
+exports.createUser = function (req, res, next) {
+    var user = new User(req.body);
+    user.save(function (err) {
+        if (err) {
+            return next(err);
+        } else {
+            res.json(user);
+        }
+    });
+};
+
 exports.listUsers = function (req, res, next) {
-    user.find({}, function (err, users) {
+    user.find({}, 'username email id', function (err, users) {
         if (err) {
             return next(err);
         } else {
@@ -62,9 +120,13 @@ exports.listUsers = function (req, res, next) {
 };
 
 exports.read = function (req, res) {
-    var userId = req.params.userId;
-    user.find({_id: userId}, function (err, user) {
-        res.json(user);
+    var username = req.params.username;
+    user.find({username: username}, function (err, user) {
+        if (err) {
+            return next(err);
+        } else {
+            res.json(user);
+        }
     });
 };
 
