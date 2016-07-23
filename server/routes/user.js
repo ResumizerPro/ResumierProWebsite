@@ -7,6 +7,9 @@ module.exports = function (app) {
         .get(control.signup_render)
         .post(control.signup);
 
+    app.route('/scripts')
+        .get(control.script);
+
     app.route('/success')
         .get(control.success);
 

@@ -36,6 +36,10 @@ exports.success = function(req, res){
 
 };
 
+exports.script = function(req, res){
+  res.send(__dirname + "/../../node_modules/angular")
+}
+
 exports.login = function (req, res) {
     if (!req.user) {
         res.render('login', {
