@@ -1,42 +1,53 @@
-/*angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scope, resumeService) {
-    // Write your code here
-    $scope.resumes = resumeService.get();
 
-    $scope.newResumes = {};
 
-    $scope.isEmpty = function(str) {
-      return String(str).length == 0;
-    };
-
-    $scope.addResumes = function (artist, title) {
-        $scope.resumes.push({
-            artist: artist,
-            title: title
-        });
-        $scope.newResumes.title = "";
-        $scope.newResumes.artist = "";
-
-    };
-
-    $scope.deleteSong = function(idx) {
-      $scope.resumes.splice(idx, 1);
-  };
-
-  $scope.$watch("resumes", function (newValue, oldValue) {
-    if (newValue !== oldValue) {
-      $scope.resumes.map(function(a){
-        console.log(a);
-      });
-      resumeService.put($scope.resumes);
-    }
-}, true);
-});*/
-
-angular.module("myApp.controllers", []).controller("RegisterCtrl", function ($scope) {
+angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope) {
     // Write your code here
     $scope.login = [];
-
     $scope.newLogin = {};
+    $scope.ContactInfo = [
+      'Full name',
+      'Email',
+      'Phone Number',
+      'GitHub',
+      'LinkedIn'
+    ]
+    $scope.Eduction = [
+      'University',
+      'Start Month',
+      'End Month',
+      'Start Year',
+      'End Year'
+      'Degree',
+      'City'
+    ]
+    $scope.Skills = [
+      'Programming Languages',
+      'IDE(s)',
+      'Technologies',
+      'Databases'
+    ]
+    $scope.Projects = [
+      'Project_Name',
+      'Project_Link',
+      'Project_Description',
+      'Project_Implementation',
+      'Project_Technologies'
+    ]
+    $scope.WorkExperience = [
+      'Job Title',
+      'Employer',
+      'City',
+      'Start_Month',
+      'Start_Year',
+      'End_Month',
+      'End_Year',
+      'Job_Description1',
+      'Job_Description2',
+      'Job_Description3',
+      'Job_Description4'
+    ]
+
+
 
     $scope.addUser = function (username, password) {
         console.log("its working?");
