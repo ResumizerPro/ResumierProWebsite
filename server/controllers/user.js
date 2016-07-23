@@ -28,18 +28,12 @@ var getErrorMessage = function (err) {
 };
 
 exports.success = function(req, res){
-  if(!req.user){
-    res.render('success', {
-        title: 'Successful Registration!',
-        messages: "Please exit this menu."
-    });
-  }
-  else{
+
     res.render('success', {
         title: 'Successful Login!',
         messages: "Please exit this menu."
     });
-  }
+
 };
 
 exports.login = function (req, res) {
@@ -89,7 +83,10 @@ exports.signup = function (req, res, next) {
         });
     } else {
         console.log('c');
-        res.redirect('/success');
+        res.render('success', {
+          title: 'You already registered silly!',
+          messages: "BTFO"
+        });
     }
 };
 
