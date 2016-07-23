@@ -32,7 +32,7 @@
 }, true);
 });*/
 
-angular.module("myApp.controllers", []).controller("RegisterCtrl", function ($scope, resumeService) {
+angular.module("myApp.controllers", []).controller("RegisterCtrl", function ($scope) {
     // Write your code here
     $scope.login = [];
 
