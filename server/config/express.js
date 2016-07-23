@@ -23,6 +23,7 @@ module.exports = function (app) {
     secret: config.sessionSecret
   }));
 
+    app.route('/scripts', __dirname + "../../node_modules/angular")
     app.set('views', __dirname + "/../../client");
     app.set('view engine', 'ejs');
     app.use(passport.initialize());
