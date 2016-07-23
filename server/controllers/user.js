@@ -27,6 +27,21 @@ var getErrorMessage = function (err) {
     return message;
 };
 
+exports.success = function(req, res){
+  if(req.user){
+    res.render('success', {
+        title: 'Successful Login!',
+        messages: "Please exit this menu."
+    });
+  }
+  else{
+    res.render('success', {
+        title: 'Successful Registration!',
+        messages: "Please exit this menu."
+    });
+  }
+};
+
 exports.login = function (req, res) {
     if (!req.user) {
         res.render('login', {
@@ -66,12 +81,12 @@ exports.signup = function (req, res, next) {
             req.login(User, function (err) {
                 console.log('a');
                 if (err) return next(err);
-                res.redirect('/');
+                res.redirect('/success');
             });
         });
     } else {
         console.log('c');
-        res.redirect('/');
+        res.redirect('/success');
     }
 };
 

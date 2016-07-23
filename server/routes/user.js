@@ -7,6 +7,9 @@ module.exports = function (app) {
         .get(control.signup_render)
         .post(control.signup);
 
+    app.route('/success')
+        .get(control.success);
+
     app.route('/users/:username')
         .get(control.read)
         .put(control.update)
@@ -29,7 +32,7 @@ module.exports = function (app) {
 
     app.route('/signin')
         .post(passport.authenticate('local', {
-            successRedirect: '/',
+            successRedirect: '/success',
             failureRedirect: '/login',
             failureFlash: true
         }));
