@@ -35,7 +35,7 @@
 
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" ng-app="myApp" class="index">
 
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -79,15 +79,16 @@
             <div class="intro-text">
                 <div class="intro-lead-in">Welcome to the Resumizer Pro!</div>
                 <div class="intro-heading">We are here to help you</div>
-                <a data-uk-modal="{target:'#login'}" class="btn btn-xl">Login</a>
+                <a data-uk-modal="{target:'#login',modal:false, bgclose:false}" class="btn btn-xl">Login</a>
             </div>
         </div>
     </header>
 
     <!-- Create a Resume Section -->
     <div id="login" class="uk-modal" style="display: none;">
-      <div class="uk-modal-dialog uk-modal-close" style="width:940px; height: 600px; margin-top:10%; border-radius: 9%">
-        <iframe style="width: 100%; height:100%;" scrolling="auto" frameborder="0" src="login" hspace="0"></iframe>
+      <a href="" class="btn uk-close" style="height: 50px; width: 50px;margin-top:10%; margin-left: 50%; position: absolute; z-index:10"></a>
+      <div class="uk-modal-dialog uk-modal-close" style="width:940px; height: 600px; margin-top:10%; border-radius: 9%" ng-controller="RegisterCtrl">
+        <iframe style="width: 100%; height:100%;" scrolling="auto" frameborder="0" src="/login" hspace="0"></iframe>
       </div>
     </div>
     <section id="create">

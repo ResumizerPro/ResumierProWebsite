@@ -4,16 +4,10 @@ var Schema = new mongoose.Schema({
     isPublic: {
         type: Boolean,
         required: true
-    },
-    masterTemp: String,
-    qualifications: [String], //
-    createdBy: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'user',
-        required: true
-    },
-    rating: Number,
+    }, //is the resume visible to the public
+    resume_type: String, //functional, targeted, combinational, chronological
 
+    //attributes of the resume
     name: String,
     email: String,
     phone_number: String,
@@ -25,22 +19,24 @@ var Schema = new mongoose.Schema({
     },
     education: [{
         degree: String,
-        institution: String,
+        school: String,
         city: String,
         gpa: Number,
         from: Date,
         to: Date,
         description: [String]
     }],
-
     work_experence: [{
-        title: String,
+        job_title: String,
         employer: String,
         city: String,
+        gpa: Number,
         from: Date,
         to: Date,
+        summary_line: String,
+        achievements: [String],
         description: [String]
-    }] //
+    }]
 });
 
 mongoose.model('resume', Schema);

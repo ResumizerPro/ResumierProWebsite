@@ -3,10 +3,10 @@ passport = require('passport');
 var user = mongoose.model('user');
 
 //noinspection JSUnusedLocalSymbols
-var getErrorMessage = function(err) {
+var getErrorMessage = function (err) {
     var message = '';
 
-    if(err.code) {
+    if (err.code) {
         switch (err.code) {
             case 11000:
             case 11001:
@@ -17,36 +17,52 @@ var getErrorMessage = function(err) {
 
         }
     }
-    else{
+    else {
         for (var errName in err.errors) {
-            if (err.errors[errName].message) message = err.errors[errName].message;
+            if (err.errors[errName].message) {
+                message = err.errors[errName].message;
+            }
         }
     }
     return message;
 };
 
-exports.login = function (req, res, next) {
-  if(!req.user) {
-    res.render ('login', {
-      title: 'Sign-in Form',
-      messages: req.flash('error') || req.flash('info')
+exports.success = function(req, res){
+
+    res.render('success', {
+        title: 'Successful Login!',
+        messages: "Please exit this menu."
     });
-  }else{
-    res.render('/', {
-      messages: 'Welcome ' + req.user
-    });
-  }
+
 };
 
-exports.signup_render = function(req, res, next){
+exports.script = function(req, res){
+  res.send(__dirname + "/../../node_modules/angular")
+}
+
+exports.login = function (req, res) {
+    if (!req.user) {
+        res.render('login', {
+            title: 'Sign-in Form',
+            messages: req.flash('error') || req.flash('info')
+        });
+    } else {
+        res.render('success', {
+            title: 'WHY ARE U FUCKIN HERE MATE',
+            messages: 'Welcome ' + req.user
+        });
+    }
+};
+
+exports.signup_render = function (req, res) {
     res.render('signup', {
-      title: 'Sign-up Form',
-      message: "get fucked"
+        title: 'Sign-up Form',
+        message: "get fucked"
     });
 };
 
 
-exports.createresume = function(req, res, next){
+exports.createresume = function (req, res) {
     return res.render('create_template');
 };
 
@@ -62,14 +78,19 @@ exports.signup = function (req, res, next) {
                 res.redirect('signup');
             }
             req.login(User, function (err) {
-                console.log('a');
                 if (err) return next(err);
-                res.redirect('/');
+                res.render('success', {
+                      title: 'Successful Registration!',
+                      messages: "Please exit this menu."
+                });
             });
         });
     } else {
         console.log('c');
-        res.redirect('/');
+        res.render('success', {
+          title: 'You already registered silly!',
+          messages: "BTFO"
+        });
     }
 };
 
@@ -85,7 +106,7 @@ exports.createUser = function (req, res, next) {
 };
 
 exports.listUsers = function (req, res, next) {
-    user.find({}, function (err, users) {
+    user.find({}, 'username email id', function (err, users) {
         if (err) {
             return next(err);
         } else {
@@ -95,9 +116,13 @@ exports.listUsers = function (req, res, next) {
 };
 
 exports.read = function (req, res) {
-    var userId = req.params.userId;
-    user.find({username: userId}, function (err, user) {
-        res.json(user);
+    var username = req.params.username;
+    user.find({username: username}, function (err, user) {
+        if (err) {
+            return next(err);
+        } else {
+            res.json(user);
+        }
     });
 };
 

@@ -7,6 +7,7 @@ var Schema = new mongoose.Schema({
         required: true
     },
     password: String,
+    role: String,
     email: String, salt: {
         type: String
     },

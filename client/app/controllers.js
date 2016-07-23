@@ -1,4 +1,4 @@
-angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scope, resumeService) {
+/*angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scope, resumeService) {
     // Write your code here
     $scope.resumes = resumeService.get();
 
@@ -30,26 +30,31 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
       resumeService.put($scope.resumes);
     }
 }, true);
-});
+});*/
 
-angular.module("myApp.controllers", []).controller("RegisterCtrl", function ($scope, resumeService) {
+angular.module("myApp.controllers", []).controller("RegisterCtrl", function ($scope) {
     // Write your code here
-    $scope.resumes = [];
+    $scope.login = [];
 
-    $scope.newResumes = {};
+    $scope.newLogin = {};
+
+    $scope.addUser = function (username, password) {
+        console.log("its working?");
+        $scope.resumes.push({
+            username: username,
+            password: password
+        });
+        $scope.newResumes.username = "";
+        $scope.newResumes.password = "";
+
+    };
 
     $scope.isEmpty = function(str) {
-      return String(str).length == 0;
+      console.log("testing is empty");
+      return String(str).length == 0 || String(str) == '';
     };
 
 
 
-  $scope.$watch("resumes", function (newValue, oldValue) {
-    if (newValue !== oldValue) {
-      $scope.resumes.map(function(a){
-        console.log(a);
-      });
-      resumeService.put($scope.resumes);
-    }
-}, true);
+
 });
