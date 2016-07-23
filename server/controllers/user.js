@@ -49,7 +49,8 @@ exports.login = function (req, res) {
             messages: req.flash('error') || req.flash('info')
         });
     } else {
-        res.render('index', {
+        res.render('success', {
+            title: 'WHY ARE U FUCKIN HERE MATE'
             messages: 'Welcome ' + req.user
         });
     }
