@@ -1,4 +1,4 @@
-angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scope, resumeService) {
+/*angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scope, resumeService) {
     // Write your code here
     $scope.resumes = resumeService.get();
 
@@ -30,13 +30,23 @@ angular.module("myApp.controllers", []).controller("resumeCtrl", function ($scop
       resumeService.put($scope.resumes);
     }
 }, true);
-});
+});*/
 
 angular.module("myApp.controllers", []).controller("RegisterCtrl", function ($scope, resumeService) {
     // Write your code here
     $scope.login = [];
 
     $scope.newLogin = {};
+
+    $scope.addResumes = function (username, password) {
+        $scope.resumes.push({
+            username: username,
+            password: password
+        });
+        $scope.newResumes.username = "";
+        $scope.newResumes.password = "";
+
+    };
 
     $scope.isEmpty = function(str) {
       console.log("testing is empty");
