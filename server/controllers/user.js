@@ -28,15 +28,15 @@ var getErrorMessage = function (err) {
 };
 
 exports.success = function(req, res){
-  if(req.user){
+  if(!req.user){
     res.render('success', {
-        title: 'Successful Login!',
+        title: 'Successful Registration!',
         messages: "Please exit this menu."
     });
   }
   else{
     res.render('success', {
-        title: 'Successful Registration!',
+        title: 'Successful Login!',
         messages: "Please exit this menu."
     });
   }
