@@ -5,7 +5,6 @@
   "main": "server.js",
   "dependencies": {
     "angular": "1.5.7",
-    "ejs": "^1.0.0",
     "body-parser": "latest",
     "bootstrap": "3.3.6",
     "compression": "latest",
@@ -23,7 +22,8 @@
     "multer": "1.1.0",
     "passport": "0.3.2",
     "passport-local": "1.0.0",
-    "passport-local-mongoose": "4.0.0"
+    "passport-local-mongoose": "4.0.0",
+    "request": "^2.73.0"
   },
   "devDependencies": {},
   "scripts": {

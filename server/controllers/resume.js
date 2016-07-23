@@ -1,7 +1,8 @@
+var request = require('request');
 var mongoose = require('mongoose');
 var resume = mongoose.model('resume');
 
-exports.findAllResume = function(req, res) {
+exports.findAllResumes = function(req, res) {
     resume.find({}, function(err, resume) {
         if (err) {
             throw new Error(err);
@@ -20,11 +21,14 @@ exports.findOneResume = function(req, res) {
 };
 
 exports.addResume = function(req, res) {
-    console.log(req.params);
-    console.log(req.query);
-    console.log(req.body); //Find out why body is undefined
-    var document = new resume(req.query); //Change back to req.body after testing
-
+    var document = new resume(req.body);
+    var user = req.body.user;
+    request('user', function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            var info = JSON.parse(body)
+        }
+    });
+    console.log(request);
     document.save(function(err, resume) {
         if (err) {
             throw new Error(err);

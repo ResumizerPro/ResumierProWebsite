@@ -48,7 +48,7 @@ exports.signup_render = function(req, res, next){
 
 exports.createresume = function(req, res, next){
     return res.render('create_template');
-}
+};
 
 exports.signup = function (req, res, next) {
     if (!req.user) {
@@ -96,7 +96,7 @@ exports.listUsers = function (req, res, next) {
 
 exports.read = function (req, res) {
     var userId = req.params.userId;
-    user.find({_id: userId}, function (err, user) {
+    user.find({username: userId}, function (err, user) {
         res.json(user);
     });
 };
