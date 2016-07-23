@@ -57,8 +57,11 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
 
     $scope.isActive = function(str1, str2){
       return str1 == str2;
-    }
+    };
 
+    $scope.setCurrent = function(str){
+      $scope.currentPage = str;
+    };
     $scope.addUser = function (username, password) {
         console.log("its working?");
         $scope.resumes.push({
