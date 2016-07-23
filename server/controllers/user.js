@@ -50,7 +50,7 @@ exports.login = function (req, res) {
         });
     } else {
         res.render('success', {
-            title: 'WHY ARE U FUCKIN HERE MATE'
+            title: 'WHY ARE U FUCKIN HERE MATE',
             messages: 'Welcome ' + req.user
         });
     }
