@@ -40,7 +40,7 @@ angular.module("myApp.controllers", []).controller("RegisterCtrl", function ($sc
 
     $scope.isEmpty = function(str) {
       console.log("testing is empty");
-      return String(str).length == 0;
+      return String(str).length == 0 || String(str) == '';
     };
 
 
