@@ -80,9 +80,11 @@ exports.signup = function (req, res, next) {
                 res.redirect('signup');
             }
             req.login(User, function (err) {
-                console.log('a');
                 if (err) return next(err);
-                res.redirect('/success');
+                res.render('success', {
+                      title: 'Successful Registration!',
+                      messages: "Please exit this menu."
+                });
             });
         });
     } else {
