@@ -10,4 +10,6 @@ module.exports = function (app) {
     app.route('/resume/:id')
         .get(control.findOneResume)
         .delete(control.removeResume);
+
+    app.get('/template', control.gettemplate);
 };
