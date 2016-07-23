@@ -5,11 +5,11 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
     $scope.login = [];
     $scope.newLogin = {};
     $scope.Pages = [
-      'Contact Info',
+      'Contact_Info',
       'Education',
       'Skills',
       'Projects',
-      'WorkExperience'
+      'Work_Experience'
     ]
     $scope.ContactInfo = [
       'Full name',

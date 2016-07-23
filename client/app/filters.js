@@ -7,4 +7,13 @@ angular.module("myApp.filters", []).filter("titlesize", function(){
     }).join(' ');
 	return str;
   }
+}).filter("NoUnderScore", function(){
+  return function(input){
+    var str = String(input).split('_');
+    var a = "";
+    str.map(function(string){
+      a += string;
+    });
+    return a;
+  }
 });
