@@ -1,11 +1,19 @@
 var mongoose = require('mongoose');
 
 var Schema = new mongoose.Schema({
-    isPublic: {
+    isPublic: { //is the resume visible to the public
         type: Boolean,
         required: true
-    }, //is the resume visible to the public
-    resume_type: String, //functional, targeted, combinational, chronological
+    },
+    canContact: { //show name, address, email, and phonenumber if true
+        type: Boolean,
+        required: true
+    },
+
+    resume_type: {
+        type: String,
+        enum: ['Functional', 'Targeted', 'Combinational', 'Chronological']
+    },
 
     //attributes of the resume
     name: String,

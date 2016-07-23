@@ -1,8 +1,6 @@
 var mongoose = require('mongoose');
-passport = require('passport');
 var user = mongoose.model('user');
 
-//noinspection JSUnusedLocalSymbols
 var getErrorMessage = function (err) {
     var message = '';
 
@@ -24,10 +22,11 @@ var getErrorMessage = function (err) {
             }
         }
     }
+    console.log(message);
     return message;
 };
 
-exports.success = function(req, res){
+exports.success = function (req, res) {
 
     res.render('success', {
         title: 'Successful Login!',
@@ -36,9 +35,9 @@ exports.success = function(req, res){
 
 };
 
-exports.script = function(req, res){
-  res.send(__dirname + "/../../node_modules/angular")
-}
+exports.script = function (req, res) {
+    res.send(__dirname + "/../../node_modules/angular")
+};
 
 exports.login = function (req, res) {
     if (!req.user) {
@@ -57,7 +56,7 @@ exports.login = function (req, res) {
 exports.signup_render = function (req, res) {
     res.render('signup', {
         title: 'Sign-up Form',
-        message: "get fucked"
+        message: ""
     });
 };
 
@@ -67,29 +66,34 @@ exports.createresume = function (req, res) {
 };
 
 exports.signup = function (req, res, next) {
-    if (!req.user) {
+    if (req.user) { //If the user is already signed in
+        console.log('c');
+        res.render('success', {
+            title: 'You already registered silly!',
+            message: "GTFO"
+        });
+    } else {
         var User = new user(req.body);
         console.log(User);
         User.provider = 'local';
-        console.log('test');
         User.save(function (err) {
-            if (err) {
-                console.log('b');
-                res.redirect('signup');
-            }
-            req.login(User, function (err) {
-                if (err) return next(err);
-                res.render('success', {
-                      title: 'Successful Registration!',
-                      messages: "Please exit this menu."
+            if (err) { //If the creation of the new user didn't work
+                res.render('signup', {
+                    title: 'Sign-up Form',
+                    message: getErrorMessage(err)
                 });
-            });
-        });
-    } else {
-        console.log('c');
-        res.render('success', {
-          title: 'You already registered silly!',
-          messages: "BTFO"
+            }
+            else {
+                req.login(User, function (err) {
+                    if (err) return next(err);
+                    else {
+                        res.render('success', {
+                            title: 'Successful Registration!',
+                            messages: "You are logged in. Please exit this menu."
+                        });
+                    }
+                });
+            }
         });
     }
 };
