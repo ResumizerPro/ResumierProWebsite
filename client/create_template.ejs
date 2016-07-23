@@ -75,7 +75,7 @@
 
     <!-- Header -->
     <header>
-      <div class = "row" ng-controller = "Form Control">
+      <div class = "row" ng-controller = "FormCtrl">
         <div class = "col-xs-4" style="margin-top: 10%">
           <form class="form-horizontal login" action="/createtemplate" method="post">
             <div class="form-group" ng-repeat="contact in ContactInfo">
@@ -89,7 +89,7 @@
               <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
                       <button type="submit" class="btn btn-default">Save</button>
-                      <a href="/somewhereelse" class="btn btn-default">Done</button>
+                      <a href="/somewhereelse" class="btn btn-default">Done</a>
                   </div>
               </div>
           </form>
