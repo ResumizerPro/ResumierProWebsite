@@ -16,7 +16,7 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
       'Start Month',
       'End Month',
       'Start Year',
-      'End Year'
+      'End Year',
       'Degree',
       'City'
     ]
