@@ -18,12 +18,13 @@ module.exports = function (app) {
     app.use(methodOverride());
 
     app.use(session({
-    saveUinitialized: true,
-    resave: true,
-    secret: config.sessionSecret
-  }));
+        saveUinitialized: true,
+        resave: true,
+        cookie: {maxAge: 300000},
+        secret: config.sessionSecret
+    }));
 
-    
+
     app.set('views', __dirname + "/../../client");
     app.set('view engine', 'ejs');
     app.use(passport.initialize());

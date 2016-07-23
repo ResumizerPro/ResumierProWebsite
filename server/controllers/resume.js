@@ -29,8 +29,6 @@ exports.addResume = function (req, res) {
             res.render('createresume', {message: "For some reason, you don't exist..."})
         }
 
-        req.body.createdBy = foundUser._id;
-
         var document = new resume(req.body);
 
         if (document.isPublic == undefined) {
