@@ -19,7 +19,7 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
       'GitHub',
       'LinkedIn'
     ]
-    $scope.Eduction = [
+    $scope.Education = [
       'University',
       'Start_Month',
       'End_Month',
@@ -60,7 +60,7 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
     };
 
     $scope.setCurrent = function(str){
-      $scope.currentPage = str;
+      $scope.currentPage = String(str);
     };
     $scope.addUser = function (username, password) {
         console.log("its working?");
