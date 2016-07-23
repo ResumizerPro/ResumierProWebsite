@@ -55,7 +55,7 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
       'Job_Description4'
     ]
 
-    $scope.isAction = function(str1, str2){
+    $scope.isActive = function(str1, str2){
       return str1 == str2;
     }
 
