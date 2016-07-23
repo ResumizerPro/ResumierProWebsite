@@ -10,10 +10,6 @@ angular.module("myApp.filters", []).filter("titlesize", function(){
 }).filter("NoUnderScore", function(){
   return function(input){
     var str = String(input).split('_');
-    var a = "";
-    str.map(function(string){
-      a += string;
-    });
-    return a;
+    return str.join(' ');
   }
 });
