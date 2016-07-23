@@ -4,6 +4,7 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
     // Write your code here
     $scope.login = [];
     $scope.newLogin = {};
+    $scope.currentPage = "Contact_Info"
     $scope.Pages = [
       'Contact_Info',
       'Education',
@@ -54,7 +55,9 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
       'Job_Description4'
     ]
 
-
+    $scope.isAction = function(str1, str2){
+      return str1 == str2;
+    }
 
     $scope.addUser = function (username, password) {
         console.log("its working?");
