@@ -18,7 +18,7 @@ module.exports = function (app) {
     app.use(methodOverride());
 
     app.use(session({
-        saveUinitialized: true,
+        saveUninitialized: true,
         resave: true,
         cookie: {maxAge: 300000},
         secret: config.sessionSecret

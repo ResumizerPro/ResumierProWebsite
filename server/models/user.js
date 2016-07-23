@@ -4,16 +4,29 @@ var crypto = require('crypto');
 var Schema = new mongoose.Schema({
     username: {
         type: String,
-        required: true
+        required: [true, 'Need a Username'],
+        unique: [true, 'Username already exists'],
+        lowercase: true,
+        trim: true
     },
-    password: String,
+    password: {
+        type: String,
+        required: [true, 'Need a password']
+    },
     role: String,
-    email: String, salt: {
+    email: {
+        type: String,
+        unique: [true, 'E-mail already exists'],
+        required: [true, 'Need an Email'],
+        lowercase: true,
+        trim: true
+    },
+    salt: {
         type: String
     },
     provider: {
-      type: String,
-      required: 'Provider is required'
+        type: String,
+        required: [true, 'Provider is required']
     },
     resumes: [{type: mongoose.Schema.Types.ObjectId, ref: 'resume'}]
 });
@@ -35,9 +48,9 @@ Schema.methods.authenticate = function (password) {
 };
 
 Schema.set('toJSON', {
-     getters: true,
-     virtuals: true
-   });
+    getters: true,
+    virtuals: true
+});
 
 
 mongoose.model('user', Schema);
