@@ -79,7 +79,7 @@
         <div class = "col-xs-4" style="margin-top: 10%">
           <form class="form-horizontal login" action="/createtemplate" style="background: #FAFAFA; padding: 10px; border-radius:10%" method="post">
               <ul class = "pagination pagination-sm" style="font-family: Sans-serif">
-                <li ng-repeat="page in Pages"><a style="text-decoration: none" href={{page}} class="btn btn-block">{{page|NoUnderScore}}</a></li>
+                <li class="active" ng-repeat="page in Pages"><a style="text-decoration: none" href={{page}} class="btn btn-block">{{page|NoUnderScore}}</a></li>
               </ul>
             <div class="form-group" ng-repeat="contact in ContactInfo">
                 <label for="inputEmail3" style="color: black" class="col-sm-2 control-label">{{contact|NoUnderScore}}</label>
