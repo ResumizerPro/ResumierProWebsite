@@ -7,7 +7,7 @@ module.exports = function (app) {
         .get(control.signup_render)
         .post(control.signup);
 
-    app.route('/users/:userId')
+    app.route('/users/:username')
         .get(control.read)
         .put(control.update)
         .delete(control.delete);
