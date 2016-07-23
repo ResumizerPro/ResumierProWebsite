@@ -12,18 +12,18 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
       'Work_Experience'
     ]
     $scope.ContactInfo = [
-      'Full name',
+      'Full_name',
       'Email',
-      'Phone Number',
+      'Phone_Number',
       'GitHub',
       'LinkedIn'
     ]
     $scope.Eduction = [
       'University',
-      'Start Month',
-      'End Month',
-      'Start Year',
-      'End Year',
+      'Start_Month',
+      'End_Month',
+      'Start_Year',
+      'End_Year',
       'Degree',
       'City'
     ]
