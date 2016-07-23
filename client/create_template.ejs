@@ -78,7 +78,7 @@
       <div class = "row" ng-controller = "FormCtrl">
         <div class = "col-xs-4" style="margin-top: 10%">
           <form class="form-horizontal login" action="/createtemplate" method="post">
-            <ul class = "pagination pagination-lg" ng-repeat="page in Pages">
+            <ul class = "pagination" ng-repeat="page in Pages">
               <li><a href="#" class="btn btn-block">{{page}}</a></li>
             </ul>
             <div class="form-group" ng-repeat="contact in ContactInfo">
