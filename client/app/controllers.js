@@ -4,6 +4,13 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
     // Write your code here
     $scope.login = [];
     $scope.newLogin = {};
+    $scope.Pages = [
+      'Contact Info',
+      'Education',
+      'Skills',
+      'Projects',
+      'WorkExperience'
+    ]
     $scope.ContactInfo = [
       'Full name',
       'Email',
