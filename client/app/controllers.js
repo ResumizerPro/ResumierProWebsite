@@ -39,6 +39,7 @@ angular.module("myApp.controllers", []).controller("RegisterCtrl", function ($sc
     $scope.newLogin = {};
 
     $scope.addResumes = function (username, password) {
+        console.log("its working?");
         $scope.resumes.push({
             username: username,
             password: password
