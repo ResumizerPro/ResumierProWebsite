@@ -81,25 +81,25 @@
               <ul class = "pagination pagination-sm" style="font-family: Sans-serif">
                 <li ng-class="{active: isActive(currentPage, page)}"ng-repeat="page in Pages"><a style="text-decoration: none" ng-click="setCurrent(page)" class="btn btn-block">{{page|NoUnderScore}}</a></li>
               </ul>
-            <div class="form-group" ng-style="{'visibility': isActive(currentPage, Pages[0])?'visible':'hidden'}" ng-repeat="contact in ContactInfo">
+            <div class="form-group" ng-show="{isActive(currentPage, Pages[0])}" ng-repeat="contact in ContactInfo">
                 <label for="inputEmail3" style="color: black" class="col-sm-2 control-label">{{contact|NoUnderScore}}</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control loginform" name={{contact}} id={{contact}} placeholder={{contact|NoUnderScore}}>
                 </div>
             </div>
-            <div class="form-group" ng-style="{'visibility': isActive(currentPage, Pages[1])?'visible':'hidden'}" ng-repeat="contact in Education">
+            <div class="form-group" ng-show="{isActive(currentPage, Pages[1])}" ng-repeat="contact in Education">
                 <label for="inputEmail3" style="color: black" class="col-sm-2 control-label">{{contact|NoUnderScore}}</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control loginform" name={{contact}} id={{contact}} placeholder={{contact|NoUnderScore}}>
                 </div>
             </div>
-            <div class="form-group" ng-style="{'visibility': isActive(currentPage, Pages[2])?'visible':'hidden'}" ng-repeat="contact in Skills">
+            <div class="form-group" ng-show="{isActive(currentPage, Pages[2])}" ng-repeat="contact in Skills">
                 <label for="inputEmail3" style="color: black" class="col-sm-2 control-label">{{contact|NoUnderScore}}</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control loginform" name={{contact}} id={{contact}} placeholder={{contact|NoUnderScore}}>
                 </div>
             </div>
-            <div class="form-group" ng-style="{'visibility': isActive(currentPage, Pages[3])?'visible':'hidden'}" ng-repeat="contact in Projects">
+            <div class="form-group" ng-show="{isActive(currentPage, Pages[3])}" ng-repeat="contact in Projects">
                 <label for="inputEmail3" style="color: black" class="col-sm-2 control-label">{{contact|NoUnderScore}}</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control loginform" name={{contact}} id={{contact}} placeholder={{contact|NoUnderScore}}>
