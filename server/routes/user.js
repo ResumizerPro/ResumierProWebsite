@@ -29,7 +29,7 @@ module.exports = function (app) {
     app.route('/users')
         .get(control.listUsers);
 
-    app.route('/createresume/*')
+    app.route('/createresume')
         .get(control.createresume)
         .post(control.createresume);
 
