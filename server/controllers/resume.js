@@ -47,9 +47,11 @@ exports.addResume = function (req, res) {
                 } else {
                   var exec = require('child_process').exec;
                   var cmd = 'sudo ./../../templates/laton text.tex input.sty helvetica.sty res.cls';
-                  document.forEach(function(key, value){
-                    console.log('KEY: ' + key + ' VALUE: ' + value)
-                  })
+                  for (var key in document) {
+                    if (document.hasOwnProperty(key)) {
+                      console.log(key + " -> " + json.EJSON.stringify(document[key]));
+                    }
+                  }
                   /*var fs = require('fs');
                   fs.writeFile("/../../templates/input_1.sty",
                     var comd = "\newcommand";
