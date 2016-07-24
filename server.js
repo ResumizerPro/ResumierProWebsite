@@ -30,12 +30,12 @@ fs.readdirSync(modelsPath).forEach(function (file) {
     }
 });
 
-https.createServer(options, app).listen(443, function () {
-   console.log('Started!');
-});
-
-var server = http.createServer(options, app)
+var server = http.createServer(app)
 
 server.listen(app.get('port'), function () {
     console.log('App started on port ' + app.get('port'));
+});
+
+https.createServer(options, app).listen(443, function () {
+   console.log('Started!');
 });
