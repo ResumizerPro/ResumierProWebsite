@@ -30,7 +30,7 @@ exports.addResume = function (req, res) {
         }
 
         var document = new resume(req.body);
-
+        console.log(document);
         if (document.isPublic == undefined) {
             console.log('but ' + req.user + ' did not provide \'isPublic\'. This attr is required');
         }
