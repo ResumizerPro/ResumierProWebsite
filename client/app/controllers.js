@@ -5,10 +5,9 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
     $scope.login = [];
     $scope.newLogin = {};
     $scope.currentPage = "Contact_Info"
-    $scope.checkboxModel = {
-       value1 : true,
-       value2 : true
-     };
+    $scope.value1 = false;
+    $scope.value2 = false;
+
     $scope.Pages = [
       'Contact_Info',
       'Education',
@@ -55,7 +54,12 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
       'end_year',
       'job_description',
     ]
-
+    $scope.ChangeValue1 = function(){
+      $scope.value1 = !scope.value1;
+    };
+    $scope.ChangeValue2 = function(){
+      $scope.value2 = !scope.value2;
+    };
     $scope.isActive = function(str1, str2){
       return str1 == str2;
     };

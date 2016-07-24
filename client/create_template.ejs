@@ -116,10 +116,10 @@
               <div class="form-group" style="color: black">
                 <div class="col-sm-offset-2 col-sm-10">
                   <label>Do you want this resume being seen by recruiters?:
-                    <input type="checkbox" name = "isPublic" ng-model="checkboxModel.value1">
+                    <input type="checkbox" name = "isPublic" ng-click="ChangeValue1()" ng-model="value1">
                   </label>
                   <label>Do you want to be contacted by recruiters?:
-                    <input type="checkbox" name = "canContact" ng-model="checkboxModel.value2">
+                    <input type="checkbox" name = "canContact" ng-click="ChangeValue2()" ng-model="value2">
                   </label>
                 </div>
               </div>
