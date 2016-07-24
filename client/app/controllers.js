@@ -7,6 +7,7 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
     $scope.currentPage = "Contact_Info"
     $scope.value1 = false;
     $scope.value2 = false;
+    
 
     $scope.Pages = [
       'Contact_Info',
