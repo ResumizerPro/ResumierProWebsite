@@ -1,6 +1,10 @@
 var mongoose = require('mongoose');
 
 var Schema = new mongoose.Schema({
+    created: {
+         type: Date,
+         default: Date.now
+    },
     isPublic: { //is the resume visible to the public
         type: Boolean,
         required: true

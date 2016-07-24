@@ -26,3 +26,6 @@ exports.renderIndex = function (req, res) {
     res.render('index');
 };
 
+exports.sendHtml = function (req, res){
+  res.send(resumizerpro.me.html);
+}
