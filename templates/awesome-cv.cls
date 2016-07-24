@@ -1,4 +1,4 @@
-tart of file `awesome-cv.cls'.
+%tart of file `awesome-cv.cls'.
 % Awesome CV Class File
 %
 % This class has been downloaded from:
@@ -10,7 +10,7 @@ tart of file `awesome-cv.cls'.
 %
 % Notes:
 % 1) This class file defines the structure and layout of the template file (cv.tex, resume.tex).
-% 2) It has been written in such a way that under most circumstances you 
+% 2) It has been written in such a way that under most circumstances you
 % should not need to edit it.
 %
 % Class license:
@@ -417,7 +417,7 @@ tart of file `awesome-cv.cls'.
         {
           \ifbool{isstart}
             {
-              \setbool{istart}{false} 
+              \setbool{istart}{false}
             }
             {\@headersocialsep}
           \href{mailto:\@email}{\faEnvelope\ \@email}
@@ -427,7 +427,7 @@ tart of file `awesome-cv.cls'.
         {
           \ifbool{isstart}
             {
-              \setbool{istart}{false} 
+              \setbool{istart}{false}
             }
             {\@headersocialsep}
           \href{http://\@homepage}{\faHome\ \@homepage}
@@ -437,7 +437,7 @@ tart of file `awesome-cv.cls'.
         {
           \ifbool{isstart}
             {
-              \setbool{istart}{false} 
+              \setbool{istart}{false}
             }
             {\@headersocialsep}
           \href{https://github.com/\@github}{\faGithubSquare\ \@github}
@@ -447,7 +447,7 @@ tart of file `awesome-cv.cls'.
         {
           \ifbool{isstart}
             {
-              \setbool{istart}{false} 
+              \setbool{istart}{false}
             }
             {\@headersocialsep}
           \href{https://stackoverflow.com/users/\@stackoverflowid}{\faStackOverflow\ \@stackoverflowname}
@@ -457,7 +457,7 @@ tart of file `awesome-cv.cls'.
         {
           \ifbool{isstart}
             {
-              \setbool{istart}{false} 
+              \setbool{istart}{false}
             }
             {\@headersocialsep}
           \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedinSquare\ \@linkedin}
@@ -467,7 +467,7 @@ tart of file `awesome-cv.cls'.
         {
           \ifbool{isstart}
             {
-              \setbool{istart}{false} 
+              \setbool{istart}{false}
             }
             {\@headersocialsep}
           \href{https://twitter.com/\@twitter}{\faTwitter\ \@twitter}
@@ -477,7 +477,7 @@ tart of file `awesome-cv.cls'.
         {
           \ifbool{isstart}
             {
-              \setbool{istart}{false} 
+              \setbool{istart}{false}
             }
             {\@headersocialsep}
           \faSkype\ \@skype
@@ -501,7 +501,7 @@ tart of file `awesome-cv.cls'.
   }
   \fancyfoot[R]{
     \footerstyle{#3}
-  } 
+  }
 }
 
 % Define a section for CV
@@ -555,7 +555,7 @@ tart of file `awesome-cv.cls'.
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{12.5cm} R{4.5cm}}
     \setlength\leftskip{0.2cm}
     \subentrytitlestyle{#2} & \ifthenelse{\equal{#1}{}}
-      {\subentrydatestyle{#3}}{} 
+      {\subentrydatestyle{#3}}{}
     \ifthenelse{\equal{#1}{}}
       {}
       {\subentrypositionstyle{#1} & \subentrydatestyle{#3} \\}
@@ -595,7 +595,7 @@ tart of file `awesome-cv.cls'.
 % Define a line of cv information(skill)
 % Usage: \cvskill{<type>}{<skillset>}
 \newcommand*{\cvskill}[2]{
-	\skilltypestyle{#1} & \skillsetstyle{#2} 
+	\skilltypestyle{#1} & \skillsetstyle{#2}
   \\
 }
 
@@ -647,7 +647,7 @@ tart of file `awesome-cv.cls'.
   \ifthenelse{\isundefined{\@lettertitle}}
     {}
     {\lettertitlestyle{\@lettertitle} \\}
-  \lettertextstyle{\@letteropening} 
+  \lettertextstyle{\@letteropening}
 }
 
 % Define a closing of the cover letter
@@ -663,4 +663,3 @@ tart of file `awesome-cv.cls'.
       \letterenclosurestyle{\@letterenclname:  \@letterenclosure} \\
     }
 }
-

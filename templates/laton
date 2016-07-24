@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash/
 #
 #  _          _                  ___        _ _
 # | |    __ _| |_ _____  __     / _ \ _ __ | (_)_ __   ___
@@ -125,5 +125,3 @@ else
     cp $outputFile $pdfFileName
     echo Success! $pdfFileName is written
 fi
-
-
