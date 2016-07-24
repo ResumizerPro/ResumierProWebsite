@@ -62,6 +62,7 @@ exports.signup_render = function (req, res) {
 
 
 exports.createresume = function (req, res) {
+    console.log(req.params);
     return res.render('create_template');
 };
 
