@@ -45,6 +45,27 @@ exports.addResume = function (req, res) {
                 if (err) {
                     return next(err);
                 } else {
+                  var exec = require('child_process').exec;
+                  var cmd = 'sudo ./../../templates/laton text.tex input.sty helvetica.sty res.cls';
+                  document.forEach(function(key, value){
+                    console.log('KEY: ' + key + ' VALUE: ' + value)
+                  })
+                  /*var fs = require('fs');
+                  fs.writeFile("/../../templates/input_1.sty",
+                    var comd = "\newcommand";
+
+
+                  , function(err) {
+                    if(err) {
+                      return console.log(err);
+                    }
+
+                    console.log("The file was saved!");
+                  });
+
+                  exec(cmd, function(error, stdout, stderr) {
+                    // command output is in stdout
+                  });*/
                     res.json(resume);
                 }
             });
@@ -82,5 +103,5 @@ exports.removeResume = function (req, res) {
 };
 
 exports.getTemplate = function (req, res) {
-    res.sendFile(path.resolve(__dirname + '/../../templates/bigfile.pdf'));
+    res.sendFile(path.resolve(__dirname + '/../../templates/text.pdf'));
 };
