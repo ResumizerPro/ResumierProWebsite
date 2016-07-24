@@ -1,7 +1,3 @@
-/**
- * Created by Dominick Martelly on 7/6/2016.
- */
-
 //Setup for our mongoDB
 var config = {
     port: 27017,
