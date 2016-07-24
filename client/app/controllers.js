@@ -84,7 +84,7 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
       return String(str).length == 0 || String(str) == '';
     };
     $scope.requiredFields = function(e){
-      return true;
+      return false;
     };
 
 
