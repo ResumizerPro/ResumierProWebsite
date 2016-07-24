@@ -151,5 +151,8 @@ exports.delete = function (req, res) {
 };
 exports.signout = function (req, res) {
     req.logout();
-    res.redirect('/');
+    res.render('/success', {
+      title: 'Successful Logout!',
+      messages: "You are now logged out."
+    });
 };

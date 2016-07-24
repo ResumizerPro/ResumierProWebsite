@@ -20,7 +20,7 @@ exports.findAllResumes = function (req, res) {
 
 exports.addResume = function (req, res) {
     console.log(req.user + ' is trying to make a resume');
-
+    console.log(req.query.id + 'this is the template I want to use');
     user.findOne({username: new RegExp(req.user, "i")}, '_id', function (err, foundUser) {
         if (err) {
             throw new Error(err);
