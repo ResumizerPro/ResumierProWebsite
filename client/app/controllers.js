@@ -15,7 +15,7 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
     $scope.ContactInfo = [
       'full_name',
       'email',
-      'phone_Number',
+      'phone_number',
       'gitHub',
       'linkedIn'
     ]
