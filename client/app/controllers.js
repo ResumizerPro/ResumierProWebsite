@@ -5,6 +5,10 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
     $scope.login = [];
     $scope.newLogin = {};
     $scope.currentPage = "Contact_Info"
+    $scope.checkboxModel = {
+       value1 : true,
+       value2 : true
+     };
     $scope.Pages = [
       'Contact_Info',
       'Education',
