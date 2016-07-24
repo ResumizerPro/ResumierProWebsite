@@ -28,7 +28,7 @@ var Schema = new mongoose.Schema({
         state: String,
         zip: Number
     },
-    education: [
+    education: [{
         degree: String,
         school: String,
         city: String,
