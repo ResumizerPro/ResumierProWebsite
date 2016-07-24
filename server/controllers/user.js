@@ -47,7 +47,7 @@ exports.login = function (req, res) {
         });
     } else {
         res.render('success', {
-            title: 'WHY ARE U FUCKIN HERE MATE',
+            title: 'Your already signed in!',
             messages: 'Welcome ' + req.user
         });
     }
@@ -62,9 +62,9 @@ exports.signup_render = function (req, res) {
 
 
 exports.createresume = function (req, res) {
-    console.log(req.params);
+    console.log(req.query.id);
     return res.render('create_template', {
-        template: String(req.params[0])
+        template: String(req.query.id)
     });
 };
 
