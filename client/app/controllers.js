@@ -82,7 +82,9 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
       console.log("testing is empty");
       return String(str).length == 0 || String(str) == '';
     };
-
+    $scope.requiredFields = function(){
+      return false;
+    };
 
 
 
