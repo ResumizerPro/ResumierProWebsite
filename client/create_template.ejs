@@ -117,15 +117,19 @@
                 <div class="col-sm-offset-2 col-sm-10">
                   <label>Do you want this resume being seen by recruiters?:
                     <input type="checkbox"
+                     name = "isPublic"
                      ng-model="value1"
                      ng-true-value=true
                      ng-false-value=false>
+                     <input type='hidden' name = "isPublic" value=false name='selfdestruct'>
                   </label>
                   <label>Do you want to be contacted by recruiters?:
                     <input type="checkbox"
                      ng-model="value2"
+                     name = "canContact"
                      ng-true-value=true
                      ng-false-value=false>
+                     <input type='hidden' name = "canContact" value=false name='selfdestruct'>
                   </label>
                 </div>
               </div>
