@@ -47,7 +47,7 @@ exports.login = function (req, res) {
         });
     } else {
         res.render('success', {
-            title: 'WHY ARE U FUCKIN HERE MATE',
+            title: 'You are already signed in!',
             messages: 'Welcome ' + req.user
         });
     }
@@ -74,9 +74,11 @@ exports.signup = function (req, res, next) {
         });
     } else {
         var User = new user(req.body);
-        console.log(User);
+        console.log('a');
         User.provider = 'local';
+        console.log('b');
         User.save(function (err) {
+            console.log('c');
             if (err) { //If the creation of the new user didn't work
                 res.render('signup', {
                     title: 'Sign-up Form',
@@ -96,17 +98,6 @@ exports.signup = function (req, res, next) {
             }
         });
     }
-};
-
-exports.createUser = function (req, res, next) {
-    var user = new User(req.body);
-    user.save(function (err) {
-        if (err) {
-            return next(err);
-        } else {
-            res.json(user);
-        }
-    });
 };
 
 exports.listUsers = function (req, res, next) {
