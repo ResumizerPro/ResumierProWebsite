@@ -84,31 +84,32 @@
             <div class="form-group" ng-show="isActive(currentPage, Pages[0])" ng-repeat="contact in ContactInfo">
                 <label for="inputEmail3" style="color: black" class="col-sm-2 control-label">{{contact|NoUnderScore| titlesize}}</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control loginform" name={{contact}} id={{contact}} placeholder={{contact|NoUnderScore|titlesize}}>
+                    <input type="text" class="form-control loginform" name='contact_info[{{contact}}]' id={{contact}} placeholder={{contact|NoUnderScore|titlesize}}>
                 </div>
             </div>
             <div class="form-group" ng-show="isActive(currentPage, Pages[1])" ng-repeat="contact in Education">
                 <label for="inputEmail3" style="color: black" class="col-sm-2 control-label">{{contact|NoUnderScore| titlesize}}</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control loginform" name={{contact}} id={{contact}} placeholder={{contact|NoUnderScore|titlesize}}>
+                    <input type="text" class="form-control loginform" name='education[{{contact}}]' id={{contact}} placeholder={{contact|NoUnderScore|titlesize}}>
                 </div>
             </div>
             <div class="form-group" ng-show="isActive(currentPage, Pages[2])" ng-repeat="contact in Skills">
                 <label for="inputEmail3" style="color: black" class="col-sm-2 control-label">{{contact|NoUnderScore| titlesize}}</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control loginform" name={{contact}} id={{contact}} placeholder={{contact|NoUnderScore|titlesize}}>
+                    <input type="text" class="form-control loginform" name='Skills[{{contact}}]' id={{contact}} placeholder={{contact|NoUnderScore|titlesize}}>
                 </div>
             </div>
             <div class="form-group" ng-show="isActive(currentPage, Pages[3])" ng-repeat="contact in Projects">
                 <label for="inputEmail3" style="color: black" class="col-sm-2 control-label">{{contact|NoUnderScore| titlesize}}</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control loginform" name={{contact}} id={{contact}} placeholder={{contact|NoUnderScore|titlesize}}>
+                    <input type="text" class="form-control loginform" name='Projects[{{contact}}]' id={{contact}} placeholder={{contact|NoUnderScore|titlesize}}>
+                    <!--<a style="text-decoration: none" ng-click="addMore(contact)" class="btn btn-block">{{page|NoUnderScore}}</a> -->
                 </div>
             </div>
             <div class="form-group" ng-show="isActive(currentPage, Pages[4])" ng-repeat="contact in WorkExperience">
                 <label for="inputEmail3" style="color: black" class="col-sm-2 control-label">{{contact|NoUnderScore| titlesize}}</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control loginform" name={{contact}} id={{contact}} placeholder={{contact|NoUnderScore}}>
+                    <input type="text" class="form-control loginform" name='work_experence[{{contact}}]' id={{contact}} placeholder={{contact|NoUnderScore}}>
                 </div>
             </div>
 

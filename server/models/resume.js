@@ -16,12 +16,13 @@ var Schema = new mongoose.Schema({
     },
 
     //attributes of the resume
-
-    full_name: String,
-    email: String,
-    phone_number: String,
-    gitHub: String,
-    linkedIn: String,
+    contact_info: [{
+        full_name: String,
+        email: String,
+        phone_number: String,
+        gitHub: String,
+        linkedIn: String
+    }],
     address: {
         house_number: String,
         street_name: String,
@@ -29,24 +30,23 @@ var Schema = new mongoose.Schema({
         zip: Number
     },
     education: [{
-        degree: String,
-        school: String,
-        city: String,
-        gpa: Number,
-        from: Date,
-        to: Date,
-        description: [String]
+      university: String,
+      start_Month: String,
+      end_Month: String,
+      start_Year: String,
+      end_Year: String,
+      degree: String,
+      city: String
     }],
     work_experence: [{
-        job_title: String,
-        employer: String,
-        city: String,
-        gpa: Number,
-        from: Date,
-        to: Date,
-        summary_line: String,
-        achievements: [String],
-        description: [String]
+      job_title: String,
+      employer: String,
+      city: String,
+      start_month: String,
+      start_year: String,
+      end_month: String,
+      end_year: String,
+      job_description: [String]
     }],
     Skills: [{
       programming_languages: [String],
@@ -57,9 +57,9 @@ var Schema = new mongoose.Schema({
     Projects: [{
       project_name: String,
       project_link: String,
-      description: [String],
-      technologies: [String],
-      implementation: [String]
+      project_description: [String],
+      project_technologies: [String],
+      project_implementation: [String]
     }]
 });
 

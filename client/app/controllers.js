@@ -49,10 +49,7 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
       'start_year',
       'end_month',
       'end_year',
-      'job_description1',
-      'job_description2',
-      'job_description3',
-      'job_description4'
+      'job_description',
     ]
 
     $scope.isActive = function(str1, str2){
