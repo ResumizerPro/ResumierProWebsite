@@ -30,7 +30,7 @@ fs.readdirSync(modelsPath).forEach(function (file) {
     }
 });
 
-https.createServer(options, app).listen(3000, function () {
+https.createServer(options, app).listen(443, function () {
    console.log('Started!');
 });
 
