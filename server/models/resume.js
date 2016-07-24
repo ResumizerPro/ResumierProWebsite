@@ -16,16 +16,19 @@ var Schema = new mongoose.Schema({
     },
 
     //attributes of the resume
-    name: String,
+
+    full_name: String,
     email: String,
     phone_number: String,
+    gitHub: String,
+    linkedIn: String,
     address: {
         house_number: String,
         street_name: String,
         state: String,
         zip: Number
     },
-    education: [{
+    education: [
         degree: String,
         school: String,
         city: String,
@@ -44,6 +47,19 @@ var Schema = new mongoose.Schema({
         summary_line: String,
         achievements: [String],
         description: [String]
+    }],
+    Skills: [{
+      programming_languages: [String],
+      iDEs: [String],
+      technologies: [String],
+      databases: [String]
+    }],
+    Projects: [{
+      project_name: String,
+      project_link: String,
+      description: [String],
+      technologies: [String],
+      implementation: [String]
     }]
 });
 

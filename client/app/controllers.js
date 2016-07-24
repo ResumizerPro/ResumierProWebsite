@@ -13,46 +13,46 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
       'Work_Experience'
     ]
     $scope.ContactInfo = [
-      'Full_name',
-      'Email',
-      'Phone_Number',
-      'GitHub',
-      'LinkedIn'
+      'full_name',
+      'email',
+      'phone_Number',
+      'gitHub',
+      'linkedIn'
     ]
     $scope.Education = [
-      'University',
-      'Start_Month',
-      'End_Month',
-      'Start_Year',
-      'End_Year',
-      'Degree',
-      'City'
+      'university',
+      'start_Month',
+      'end_Month',
+      'start_Year',
+      'end_Year',
+      'degree',
+      'city'
     ]
     $scope.Skills = [
-      'Programming Languages',
-      'IDE(s)',
-      'Technologies',
-      'Databases'
+      'programming_Languages',
+      'iDEs',
+      'technologies',
+      'databases'
     ]
     $scope.Projects = [
-      'Project_Name',
-      'Project_Link',
-      'Project_Description',
-      'Project_Implementation',
-      'Project_Technologies'
+      'project_name',
+      'project_link',
+      'project_description',
+      'project_implementation',
+      'project_technologies'
     ]
     $scope.WorkExperience = [
-      'Job Title',
-      'Employer',
-      'City',
-      'Start_Month',
-      'Start_Year',
-      'End_Month',
-      'End_Year',
-      'Job_Description1',
-      'Job_Description2',
-      'Job_Description3',
-      'Job_Description4'
+      'job_title',
+      'employer',
+      'city',
+      'start_month',
+      'start_year',
+      'end_month',
+      'end_year',
+      'job_description1',
+      'job_description2',
+      'job_description3',
+      'job_description4'
     ]
 
     $scope.isActive = function(str1, str2){
