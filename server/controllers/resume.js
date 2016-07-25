@@ -161,7 +161,7 @@ exports.addResume = function (req, res) {
                   });*/
 
 
-                  exec(cmd, function(error, stdout, stderr) {
+                  exec(cmd, { cwd: __dirname } ,function(error, stdout, stderr) {
                     console.log(stderr);
                     console.log(stdout);
                   });
