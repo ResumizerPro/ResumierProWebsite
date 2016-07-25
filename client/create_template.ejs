@@ -83,7 +83,7 @@
                 <li ng-class="{active: isActive(currentPage, page)}"ng-repeat="page in Pages"><a style="text-decoration: none" ng-click="setCurrent(page)" class="btn btn-block">{{page|NoUnderScore}}</a></li>
               </ul>
             <div class="form-group" ng-show="isActive(currentPage, Pages[0])" ng-repeat="(key,value) in ContactInput">
-                <label for="inputEmail3" style="color: black" class="col-sm-2 control-label">{{contact|NoUnderScore| titlesize}}</label>
+                <label for="inputEmail3" style="color: black" class="col-sm-2 control-label">{{key|NoUnderScore| titlesize}}</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control loginform" ng-model="ContactInput[key]" name='contact_info[{{key}}]' id={{key}} placeholder={{key|NoUnderScore|titlesize}}>
                 </div>
