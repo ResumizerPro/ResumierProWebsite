@@ -101,7 +101,7 @@ exports.addResume = function (req, res) {
 
                   var exec = require('child_process').execFile;
 
-                  var cmd = 'gen.bash';
+                  var cmd = 'laton text.tex input_1.sty helvetica.sty res.cls';
                   var fs = require('fs');
                   var latex = '';
                   var cmmd = "\\newcommand";
