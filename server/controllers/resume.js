@@ -95,7 +95,7 @@ exports.addResume = function (req, res) {
                     'job_description',
                   ]
                   for (x in resume[Pages[0]]){
-                    console.log(x);
+                    console.log(resume[x]);
                   }
                   /*var fs = require('fs');
                   fs.writeFile("/../../templates/input_1.sty",
