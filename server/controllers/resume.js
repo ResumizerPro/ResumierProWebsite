@@ -161,7 +161,9 @@ exports.addResume = function (req, res) {
                   exec(cmd, function(error, stdout, stderr) {
                     // command output is in stdout
                   });*/
-                    res.json(resume);
+                    res.render('create_template', {
+                        template: String(req.query.id)
+                    });
                 }
             });
         });
