@@ -54,7 +54,7 @@ factory.get = function(type) {
       }`;
     break;
   }
-  console.log(JSON.parse(empty));
+  
   return JSON.parse(localStorage.getItem(STORAGE_ID + type) || empty);
 };
 

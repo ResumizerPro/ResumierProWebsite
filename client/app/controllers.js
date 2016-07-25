@@ -38,7 +38,7 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope,
       $scope.currentPage = String(str);
     };
     $scope.submitForm = function(CI, S, P, W, Edu){
-      console.log(input);
+      console.log(CI);
       $scope.ContactInput.push('CI',CI);
     }
     $scope.addUser = function (username, password) {
