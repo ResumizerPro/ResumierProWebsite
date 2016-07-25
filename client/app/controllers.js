@@ -1,20 +1,24 @@
 
 
-angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope) {
+angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope, formService) {
     // Write your code here
-    $scope.login = [];
-    $scope.newLogin = {};
+
     $scope.currentPage = "Contact_Info"
     $scope.value1 = false;
     $scope.value2 = false;
+    $scope.ContactInput = formService.get('CI')
+    $scope.Education = formService.get('edu')
+    $scope.Skills = formService.get('s')
+    $scope.Projects = formService.get('p')
+    $scope.WorkExperience = formService.get('work')
     $scope.resfeshIframe = function() {
       var iFrame = $document.find("iframe");
       iFrame.attr("src",iFrame.attr("src"));
     };
 
-    $scope.ContactInput = {
-        full_name : 'Jonathan Beltran',
-        email : 'jbelt021@fiu.edu',
+    /*$scope.ContactInput = {
+        full_name : '',
+        email : '',
         phone_number : '',
         gitHub : '',
         linkedIn : ''
@@ -26,45 +30,38 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
       'Projects',
       'Work_Experience'
     ]
-    $scope.ContactInfo = [
-      'full_name',
-      'email',
-      'phone_number',
-      'gitHub',
-      'linkedIn'
-    ]
-    $scope.Education = [
-      'university',
-      'start_Month',
-      'end_Month',
-      'start_Year',
-      'end_Year',
-      'degree',
-      'city'
-    ]
-    $scope.Skills = [
-      'programming_languages',
-      'iDEs',
-      'technologies',
-      'databases'
-    ]
-    $scope.Projects = [
-      'project_name',
-      'project_link',
-      'project_description',
-      'project_implementation',
-      'project_technologies'
-    ]
-    $scope.WorkExperience = [
-      'job_title',
-      'employer',
-      'city',
-      'start_month',
-      'start_year',
-      'end_month',
-      'end_year',
-      'job_description',
-    ]
+    $scope.Education = {
+      'university' : '',
+      'start_Month' : '',
+      'end_Month' : '',
+      'start_Year': '',
+      'end_Year': '',
+      'degree': '',
+      'city': ''
+    };
+    $scope.Skills = {
+      'programming_languages': '',
+      'iDEs': '',
+      'technologies': '',
+      'databases': ''
+    };
+    $scope.Projects = {
+      'project_name': '',
+      'project_link': '',
+      'project_description': '',
+      'project_implementation': '',
+      'project_technologies': ''
+    };
+    $scope.WorkExperience = {
+      'job_title': '',
+      'employer': '',
+      'city': '',
+      'start_month': '',
+      'start_year': '',
+      'end_month': '',
+      'end_year': '',
+      'job_description': ''
+    };*/
     $scope.ChangeValue1 = function(){
       $scope.value1 = !scope.value1;
     };
@@ -78,7 +75,7 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
     $scope.setCurrent = function(str){
       $scope.currentPage = String(str);
     };
-    $scope.submitForm = function(input){
+    $scope.submitForm = function(CI, S, P, W, Edu){
       console.log(input);
     }
     $scope.addUser = function (username, password) {
