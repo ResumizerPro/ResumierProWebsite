@@ -99,8 +99,7 @@ exports.addResume = function (req, res) {
                     return next(err);
                 } else {
 
-                  var exec = require('child_process').exec;
-                  var cmd = './laton text.tex input_1.sty helvetica.sty res.cls';
+
                   var fs = require('fs');
                   var latex = '';
                   var cmmd = "\\newcommand";
@@ -143,12 +142,12 @@ exports.addResume = function (req, res) {
                           break;
                         }
                   }
-                /*  fs.writeFile(__dirname + "/input_1.sty",latex , function(err) {
+                fs.writeFile(__dirname + "/input_1.sty",latex , function(err) {
                     if(err) {
                       return console.log(err);
                     }
                     console.log("The file was saved!");
-                  });*/
+                  });
                   /*var fs = require('fs');
                   fs.writeFile("/../../templates/input_1.sty",
                     var comd = "\newcommand";
@@ -160,14 +159,9 @@ exports.addResume = function (req, res) {
                   });*/
 
 
-                  exec(cmd, { cwd: __dirname } ,function(error, stdout, stderr) {
-                    console.log(stderr);
-                    console.log(stdout);
-                  });
 
-                    res.render('create_template', {
-                        template: String(req.query.id)
-                    });
+
+                    res.redirect('/createresume?id=' + req.query.id);
                 }
             });
         });
