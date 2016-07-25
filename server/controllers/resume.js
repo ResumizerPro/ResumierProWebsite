@@ -108,36 +108,36 @@ exports.addResume = function (req, res) {
                       switch(Pages[x]){
                         case 'contact_info':
                           for (var y in ContactInfo){
-                            var name = '\\' + ContactInfo[y];
-                            latex += cmmd + "{" + name + "}" + "{"+ resume[Pages[x]][0][ContactInfo[y]] + "}" ;
+                            var name = '\\' + ContactInfo[y].split('_').join('');
+                            latex += cmmd + "{" + name + "}" + "{"+ resume[Pages[x]][0][ContactInfo[y]] + "}\r\n" ;
                             console.log(ContactInfo[y] + ': ' + resume[Pages[x]][0][ContactInfo[y]]);
                           }
                           break;
                         case 'education':
                           for (var y in Education){
-                            var name = '\\' + Education[y];
-                            latex += cmmd + "{" + name + "}" + "{"+ resume[Pages[x]][0][Education[y]] + "}" ;
+                            var name = '\\' + Education[y].split('_').join('');
+                            latex += cmmd + "{" + name + "}" + "{"+ resume[Pages[x]][0][Education[y]] + "}\r\n" ;
                             console.log(Education[y] + ': ' + resume[Pages[x]][0][Education[y]]);
                           }
                           break;
                         case 'Skills':
                           for (var y in Skills){
-                            var name = '\\' + Skills[y];
-                            latex += cmmd + "{" + name + "}" + "{"+ resume[Pages[x]][0][Skills[y]] + "}" ;
+                            var name = '\\' + Skills[y].split('_').join('');
+                            latex += cmmd + "{" + name + "}" + "{"+ resume[Pages[x]][0][Skills[y]] + "}\r\n" ;
                             console.log(Skills[y] + ': ' + resume[Pages[x]][0][Skills[y]]);
                           }
                           break;
                         case 'Projects':
                           for (var y in Projects){
-                            var name = '\\' + Projects[y];
-                            latex += cmmd + "{" + name + "}" + "{"+ resume[Pages[x]][0][Projects[y]] + "}" ;
+                            var name = '\\' + Projects[y].split('_').join('');
+                            latex += cmmd + "{" + name + "}" + "{"+ resume[Pages[x]][0][Projects[y]] + "}\r\n" ;
                             console.log(Projects[y] + ': ' + resume[Pages[x]][0][Projects[y]]);
                           }
                           break;
                         case 'work_experence':
                           for (var y in WorkExperience){
-                            var name = '\\' + WorkExperience[y];
-                            latex += cmmd + "{" + name + "}" + "{"+ resume[Pages[x]][0][WorkExperience[y]] + "}" ;
+                            var name = '\\' + WorkExperience[y].split('_').join('');
+                            latex += cmmd + "{" + name + "}" + "{"+ resume[Pages[x]][0][WorkExperience[y]] + "}\n" ;
                             console.log(WorkExperience[y] + ': ' + resume[Pages[x]][0][WorkExperience[y]]);
                           }
                           break;

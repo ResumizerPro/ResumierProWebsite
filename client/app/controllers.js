@@ -33,7 +33,7 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
       'city'
     ]
     $scope.Skills = [
-      'programming_Languages',
+      'programming_languages',
       'iDEs',
       'technologies',
       'databases'
