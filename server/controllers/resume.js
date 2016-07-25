@@ -98,7 +98,7 @@ exports.addResume = function (req, res) {
                   for (var x in Pages){
                     //console.log(Object.keys(resume[Pages[x]]));
                     for (var y in resume[Pages[x]]){
-                      console.log(resume[Pages[x]].y)
+                      console.log(y);
                     }
                   }
                   /*var fs = require('fs');
