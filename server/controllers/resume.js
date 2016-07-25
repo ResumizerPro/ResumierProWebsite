@@ -56,7 +56,9 @@ exports.addResume = function (req, res) {
                     'work_experience'
                   ]
                   for (var x in Pages){
+                    console.log(x);
                     console.log(resume.x);
+                    console.log(resume.skills);
                   }
                   /*var fs = require('fs');
                   fs.writeFile("/../../templates/input_1.sty",
