@@ -1,8 +1,9 @@
 
 
-angular.module("myApp.controllers", []).controller("FormCtrl", function ($scopes) {
+angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope) {
     // Write your code here
-  //  $scope.form = formServices.get();
+    $scope.login = [];
+    $scope.newLogin = {};
     $scope.currentPage = "Contact_Info"
     $scope.value1 = false;
     $scope.value2 = false;
@@ -11,7 +12,6 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scopes
       iFrame.attr("src",iFrame.attr("src"));
     };
 
-    $scope.input = []
     $scope.Pages = [
       'Contact_Info',
       'Education',
@@ -71,14 +71,14 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scopes
     $scope.setCurrent = function(str){
       $scope.currentPage = String(str);
     };
-    $scope.submitForm = function (input) {
-        console.log(input);
-        /*$scope.resumes.push({
+    $scope.addUser = function (username, password) {
+        console.log("its working?");
+        $scope.resumes.push({
             username: username,
             password: password
         });
         $scope.newResumes.username = "";
-        $scope.newResumes.password = "";*/
+        $scope.newResumes.password = "";
 
     };
 
