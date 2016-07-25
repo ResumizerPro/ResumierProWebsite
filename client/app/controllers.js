@@ -12,6 +12,7 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
       iFrame.attr("src",iFrame.attr("src"));
     };
 
+    $scope.Input = []
     $scope.Pages = [
       'Contact_Info',
       'Education',
@@ -71,6 +72,9 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
     $scope.setCurrent = function(str){
       $scope.currentPage = String(str);
     };
+    $scope.submitForm = function(input){
+      console.log(input);
+    }
     $scope.addUser = function (username, password) {
         console.log("its working?");
         $scope.resumes.push({
