@@ -96,10 +96,32 @@ exports.addResume = function (req, res) {
                   ]
                   console.log(Object.keys(resume));
                   for (var x in Pages){
-                    if(Pages[x] == 'contact_info'){
-                      for (var y in ContactInfo){
-                        console.log(ContactInfo[y] + ': ' + resume[Pages[x]][0][ContactInfo[y]]);
-                      }
+                    switch(Pages[x]){
+                      case 'contact_info':
+                        for (var y in ContactInfo){
+                          console.log(ContactInfo[y] + ': ' + resume[Pages[x]][0][ContactInfo[y]]);
+                        }
+                      break;
+                      case 'education':
+                        for (var y in Education){
+                          console.log(Education[y] + ': ' + resume[Pages[x]][0][Education[y]]);
+                        }
+                      break;
+                      case 'Skills':
+                        for (var y in Skills){
+                          console.log(Skills[y] + ': ' + resume[Pages[x]][0][Skills[y]]);
+                        }
+                      break;
+                      case 'Projects':
+                        for (var y in Projects){
+                          console.log(Projects[y] + ': ' + resume[Pages[x]][0][Projects[y]]);
+                        }
+                      break;
+                      case 'work_experence':
+                        for (var y in WorkExperience){
+                          console.log(WorkExperience[y] + ': ' + resume[Pages[x]][0][WorkExperience[y]]);
+                        }
+                      break;
                     }
                   }
                   /*var fs = require('fs');
