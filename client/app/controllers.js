@@ -7,7 +7,10 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
     $scope.currentPage = "Contact_Info"
     $scope.value1 = false;
     $scope.value2 = false;
-
+    $scope.resfeshIframe = function() {
+      var iFrame = $document.find("iframe");
+      iFrame.attr("src",iFrame.attr("src"));
+    };
 
     $scope.Pages = [
       'Contact_Info',

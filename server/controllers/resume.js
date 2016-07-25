@@ -100,8 +100,8 @@ exports.addResume = function (req, res) {
                 } else {
 
                   var exec = require('child_process').exec;
-                  var folder = __dirname + '/../../templates/';
-                  var cmd = 'sudo ' + folder + 'laton ' + folder + 'text.tex ' + folder + 'input_1.sty ' + folder + 'helvetica.sty ' +folder+'res.cls';
+
+                  var cmd = 'sudo laton text.tex input_1.sty helvetica.sty res.cls';
                   var fs = require('fs');
                   var latex = '';
                   var cmmd = "\\newcommand";
@@ -165,10 +165,6 @@ exports.addResume = function (req, res) {
                     console.log(stderr);
                   });
 
-                  cmd = "mv " + __dirname + "/text.pdf " + __dirname + "/../../templates/";
-                  exec(cmd, function(error, stdout, stderr) {
-                    console.log(stderr);
-                  });
                     res.render('create_template', {
                         template: String(req.query.id)
                     });
@@ -208,5 +204,5 @@ exports.removeResume = function (req, res) {
 };
 
 exports.getTemplate = function (req, res) {
-    res.sendFile(path.resolve(__dirname + '/../../templates/text.pdf'));
+    res.sendFile(path.resolve(__dirname + '/text.pdf'));
 };
