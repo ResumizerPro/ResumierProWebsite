@@ -1,6 +1,6 @@
 require('../models/user');
 var dbURI = 'mongodb://localhost/testing',
-    clearDB = require('mocha-mongoose')(dbURI);
+    clearDB = require('mocha-mongoose')(dbURI),
 
     chai = require('chai'), //chai commands
     assert = chai.assert,
@@ -11,8 +11,8 @@ var dbURI = 'mongodb://localhost/testing',
 
 mongoose.connect(dbURI);
 
-describe('Testing User Controller Class Method Login', function () {
-    describe('Test_Login_1', function () {
+describe('RP_Login001_UT', function () {
+    describe('RP_Login001_UT_001', function () {
         it('Sunny-day where BobbyCreak is already sighed in', function (done) {
 
             var expected = 'render:success_title:You are already signed in!_message:Welcome BobbyCreak';
@@ -40,7 +40,7 @@ describe('Testing User Controller Class Method Login', function () {
             done();
         });
     });
-    describe('Test_Login_2', function () {
+    describe('RP_Login001_UT_002', function () {
         it('Sunny-day where \'!@#$^^&*\' is already sighed in', function (done) {
 
             var expected = 'render:success_title:You are already signed in!_message:Welcome !@#$^^&*';
@@ -68,7 +68,7 @@ describe('Testing User Controller Class Method Login', function () {
             done();
         });
     });
-    describe('Test_Login_3', function () {
+    describe('RP_Login001_UT_003', function () {
         it('Rainy-day where \'\' (A blank string) is signed in', function (done) {
 
             var expected = 'flash:error_flash:info_render:login_title:Sign-in Form_message:undefined';
@@ -97,8 +97,8 @@ describe('Testing User Controller Class Method Login', function () {
         });
     });
 });
-describe('Testing User Controller Class Method Success', function () {
-    describe('Test_Success_1', function () {
+describe('RP_Success002_UT', function () {
+    describe('RP_Success002_UT_004', function () {
         it('Sunny-day. Only one case since the method does not take any outside parameters', function (done) {
 
             var expected = 'render:success_title:Successful Login!_message:Please exit this menu.';
@@ -127,8 +127,8 @@ describe('Testing User Controller Class Method Success', function () {
         });
     });
 });
-describe('Testing User Controller Class Method Signup_render', function () {
-    describe('Test_signup_render_1', function () {
+describe('RP_Signup_render003_UT', function () {
+    describe('RP_Signup_render003_UT_005', function () {
         it('Sunny-day. Only one case since the method does not take any outside parameters', function (done) {
 
             var expected = 'render:signup_title:Sign-up Form_message:';
@@ -157,8 +157,8 @@ describe('Testing User Controller Class Method Signup_render', function () {
         });
     });
 });
-describe('Testing User Controller Class Method Signout', function () {
-    describe('Test_Signout_1', function () {
+describe('RP_Signout004_UT', function () {
+    describe('RP_Signout004_UT_006', function () {
         it('Sunny-day. Only one case since the method does not take any outside parameters', function (done) {
 
             var expected = 'redirect:/';
@@ -187,7 +187,7 @@ describe('Testing User Controller Class Method Signout', function () {
         });
     });
 });
-describe('Testing User Controller Class Method Login', function () {
+describe('RP_Signup005_UT', function () {
     beforeEach(function (done) {
         clearDB();
 
@@ -198,7 +198,7 @@ describe('Testing User Controller Class Method Login', function () {
             provider: 'a'
         }).save(done);
     });
-    describe('Test_Signup_1', function () {
+    describe('RP_Signup005_UT_007', function () {
         it('Sunny-day where a new user creates an account', function (done) {
 
             var expected = 'render:success_title:Successful Registration!_message:You are logged in. Please exit this menu.';
@@ -228,11 +228,14 @@ describe('Testing User Controller Class Method Login', function () {
                 provider: 'idc'
             };
             userController.signup(req, res);
-            assert.equal(output, expected);
+            setTimeout(function(){
+                assert.equal(output, expected);
+            }, 2000);
+
             done();
         });
     });
-    describe('Test_Signup_2', function () {
+    describe('RP_Signup005_UT_008', function () {
         it('Sunny-day where a new user creates an account', function (done) {
 
             var expected = 'render:success_title:Successful Registration!_message:You are logged in. Please exit this menu.';
@@ -260,11 +263,13 @@ describe('Testing User Controller Class Method Login', function () {
                 provider: 'idk'
             };
             userController.signup(req, res);
-            assert.equal(output, expected);
+            setTimeout(function(){
+                assert.equal(output, expected);
+            }, 2000);
             done();
         });
     });
-    describe('Test_Signup_3', function () {
+    describe('RP_Signup005_UT009', function () {
         it('Rainy-day where a new user tries to create a new account but is already signed in', function (done) {
 
             var expected = 'render:success_title:You already registered silly!_message:GTFO';
@@ -292,7 +297,10 @@ describe('Testing User Controller Class Method Login', function () {
                 provider: 'yep'
             };
             userController.signup(req, res);
-            assert.equal(output, expected);
+
+            setTimeout(function(){
+                assert.equal(output, expected);
+            }, 2000);
             done();
         });
     });
