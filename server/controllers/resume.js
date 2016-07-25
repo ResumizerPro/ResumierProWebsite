@@ -97,11 +97,8 @@ exports.addResume = function (req, res) {
                   console.log(Object.keys(resume));
                   for (var x in Pages){
                     if(Pages[x] == 'contact_info'){
-                      for(var i in resume[Pages[x]][0]){
-                        console.log(resume[Pages[x]][0][i]);
-                      }
                       for (var y in ContactInfo){
-                        console.log(resume[Pages[x]][0][ContactInfo[y]]);
+                        console.log(ContactInfo[y] + ': ' + resume[Pages[x]][0][ContactInfo[y]]);
                       }
                     }
                   }
