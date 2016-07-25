@@ -158,9 +158,13 @@ exports.addResume = function (req, res) {
                     }
                     console.log("The file was saved!");
                   });*/
+                  var wait = false;
+
                   exec(cmd, function(error, stdout, stderr) {
                     console.log(stderr);
+                    wait = true;
                   });
+                  while(!wait){};
                   cmd = "mv " + __dirname + "/text.pdf " + __dirname + "/../../templates/";
                   exec(cmd, function(error, stdout, stderr) {
                     console.log(stderr);
