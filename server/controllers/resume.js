@@ -143,12 +143,12 @@ exports.addResume = function (req, res) {
                           break;
                         }
                   }
-                  fs.writeFile(__dirname + "/input_1.sty",latex , function(err) {
+                /*  fs.writeFile(__dirname + "/input_1.sty",latex , function(err) {
                     if(err) {
                       return console.log(err);
                     }
                     console.log("The file was saved!");
-                  });
+                  });*/
                   /*var fs = require('fs');
                   fs.writeFile("/../../templates/input_1.sty",
                     var comd = "\newcommand";
