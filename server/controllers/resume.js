@@ -51,16 +51,12 @@ exports.addResume = function (req, res) {
                   /*var fs = require('fs');
                   fs.writeFile("/../../templates/input_1.sty",
                     var comd = "\newcommand";
-
-
                   , function(err) {
                     if(err) {
                       return console.log(err);
                     }
-
                     console.log("The file was saved!");
                   });
-
                   exec(cmd, function(error, stdout, stderr) {
                     // command output is in stdout
                   });*/

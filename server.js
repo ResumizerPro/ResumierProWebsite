@@ -5,13 +5,13 @@ var https = require('https');
 var mongoose = require('mongoose'); //To make sure mongoose is on the server
 
 var root = __dirname;
-
+/*
 var options = {
    key  : fs.readFileSync('server.key'),
    cert : fs.readFileSync('server.crt'),
    requestCert: false,
    rejectUnauthorized: false
-};
+};*/
 //Config
 var config = require('./server/config/config');
 require('./server/config/db')(config);
@@ -38,6 +38,6 @@ server.listen(app.get('port'), function () {
     console.log('App started on port ' + app.get('port'));
 });
 
-https.createServer(options, app).listen(443, function () {
+/*https.createServer(options, app).listen(443, function () {
    console.log('Started!');
-});
+});*/
