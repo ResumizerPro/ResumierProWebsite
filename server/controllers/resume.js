@@ -163,6 +163,7 @@ exports.addResume = function (req, res) {
 
                   exec(cmd, function(error, stdout, stderr) {
                     console.log(stderr);
+                    console.log(stdout);
                   });
 
                     res.render('create_template', {
