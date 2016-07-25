@@ -1,6 +1,6 @@
 
 
-angular.module("myApp.controllers", []).controller("FormCtrl", function ($scopes, formServices) {
+angular.module("myApp.controllers", []).controller("FormCtrl", function ($scopes, formService) {
     // Write your code here
     $scope.form = formServices.get();
     $scope.currentPage = "Contact_Info"
