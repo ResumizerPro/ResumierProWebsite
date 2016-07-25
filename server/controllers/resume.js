@@ -143,7 +143,7 @@ exports.addResume = function (req, res) {
                           break;
                         }
                   }
-                  fs.writeFile("/../../templates/input_1.sty",latex , function(err) {
+                  fs.writeFile(__dirname + "/../../templates/input_1.sty",latex , function(err) {
                     if(err) {
                       return console.log(err);
                     }
