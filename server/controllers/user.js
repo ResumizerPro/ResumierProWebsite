@@ -73,7 +73,7 @@ exports.signup = function (req, res, next) {
         console.log('c');
         res.render('success', {
             title: 'You already registered silly!',
-            message: "GTFO"
+            messages: "GTFO"
         });
     } else {
         var User = new user(req.body);
