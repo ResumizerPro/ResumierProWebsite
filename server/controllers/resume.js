@@ -109,28 +109,28 @@ exports.addResume = function (req, res) {
                         case 'contact_info':
                           for (var y in ContactInfo){
                             var name = '\\' + ContactInfo[y].split('_').join('');
-                            latex += cmmd + "{" + name + "}" + "{"+ resume[Pages[x]][0][ContactInfo[y]] + "}\r\n" ;
+                            latex += cmmd + "{" + name + "}" + "{"+ resume[Pages[x]][0][ContactInfo[y]] + "}\n" ;
                             console.log(ContactInfo[y] + ': ' + resume[Pages[x]][0][ContactInfo[y]]);
                           }
                           break;
                         case 'education':
                           for (var y in Education){
                             var name = '\\' + Education[y].split('_').join('');
-                            latex += cmmd + "{" + name + "}" + "{"+ resume[Pages[x]][0][Education[y]] + "}\r\n" ;
+                            latex += cmmd + "{" + name + "}" + "{"+ resume[Pages[x]][0][Education[y]] + "}\n" ;
                             console.log(Education[y] + ': ' + resume[Pages[x]][0][Education[y]]);
                           }
                           break;
                         case 'Skills':
                           for (var y in Skills){
                             var name = '\\' + Skills[y].split('_').join('');
-                            latex += cmmd + "{" + name + "}" + "{"+ resume[Pages[x]][0][Skills[y]] + "}\r\n" ;
+                            latex += cmmd + "{" + name + "}" + "{"+ resume[Pages[x]][0][Skills[y]] + "}\n" ;
                             console.log(Skills[y] + ': ' + resume[Pages[x]][0][Skills[y]]);
                           }
                           break;
                         case 'Projects':
                           for (var y in Projects){
                             var name = '\\' + Projects[y].split('_').join('');
-                            latex += cmmd + "{" + name + "}" + "{"+ resume[Pages[x]][0][Projects[y]] + "}\r\n" ;
+                            latex += cmmd + "{" + name + "}" + "{"+ resume[Pages[x]][0][Projects[y]] + "}\n" ;
                             console.log(Projects[y] + ': ' + resume[Pages[x]][0][Projects[y]]);
                           }
                           break;
