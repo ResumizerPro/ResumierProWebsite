@@ -56,7 +56,7 @@ exports.addResume = function (req, res) {
                     'work_experience'
                   ]
                   for (var x in Pages){
-                    console.log(Pages[x]);
+                    console.log(resume[Pages[x]]);
                     console.log(resume.Skills);
                   }
                   /*var fs = require('fs');
