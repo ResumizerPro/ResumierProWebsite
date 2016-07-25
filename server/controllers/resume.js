@@ -99,9 +99,9 @@ exports.addResume = function (req, res) {
                     return next(err);
                 } else {
 
-                  var exec = require('child_process').exec;
+                  var exec = require('child_process').execFile;
 
-                  var cmd = 'source gen.bash';
+                  var cmd = 'gen.bash';
                   var fs = require('fs');
                   var latex = '';
                   var cmmd = "\\newcommand";
