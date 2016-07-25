@@ -2,7 +2,7 @@
 
 angular.module("myApp.controllers", []).controller("FormCtrl", function ($scopes, formService) {
     // Write your code here
-    $scope.form = formServices.get();
+  //  $scope.form = formServices.get();
     $scope.currentPage = "Contact_Info"
     $scope.value1 = false;
     $scope.value2 = false;
