@@ -100,7 +100,8 @@ exports.addResume = function (req, res) {
                 } else {
 
                   var exec = require('child_process').exec;
-                  var cmd = 'sudo ' + __dirname + '/../../templates/laton text.tex input_1.sty helvetica.sty res.cls';
+                  var folder = __dirname + '/../../templates/';
+                  var cmd = 'sudo ' folder + 'laton ' + folder + 'text.tex ' + folder + 'input_1.sty ' + folder + 'helvetica.sty ' +folder+'res.cls';
                   var fs = require('fs');
                   var latex = '';
                   var cmmd = "\\newcommand";
@@ -158,7 +159,7 @@ exports.addResume = function (req, res) {
                     }
                     console.log("The file was saved!");
                   });*/
-                  
+
 
                   exec(cmd, function(error, stdout, stderr) {
                     console.log(stderr);
