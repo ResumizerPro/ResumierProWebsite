@@ -91,26 +91,26 @@
             <div class="form-group" ng-show="isActive(currentPage, Pages[1])" ng-repeat="(key,value) in Education">
                 <label for="inputEmail3" style="color: black" class="col-sm-2 control-label">{{key|NoUnderScore| titlesize}}</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control loginform" name='education[{{key}}]' id={{key}} placeholder={{key|NoUnderScore|titlesize}}>
+                    <input type="text" class="form-control loginform" ng-model="Education[key]" name='education[{{key}}]' id={{key}} placeholder={{key|NoUnderScore|titlesize}}>
                 </div>
             </div>
             <div class="form-group" ng-show="isActive(currentPage, Pages[2])" ng-repeat="(key,value) in Skills">
                 <label for="inputEmail3" style="color: black" class="col-sm-2 control-label">{{key|NoUnderScore| titlesize}}</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control loginform" name='Skills[{{key}}]' id={{key}} placeholder={{key|NoUnderScore|titlesize}}>
+                    <input type="text" class="form-control loginform" ng-model="Skills[key]" name='Skills[{{key}}]' id={{key}} placeholder={{key|NoUnderScore|titlesize}}>
                 </div>
             </div>
             <div class="form-group" ng-show="isActive(currentPage, Pages[3])" ng-repeat="(key,value) in Projects">
                 <label for="inputEmail3" style="color: black" class="col-sm-2 control-label">{{key|NoUnderScore| titlesize}}</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control loginform" name='Projects[{{key}}]' id={{key}} placeholder={{key|NoUnderScore|titlesize}}>
+                    <input type="text" class="form-control loginform" ng-model="Projects[key]" name='Projects[{{key}}]' id={{key}} placeholder={{key|NoUnderScore|titlesize}}>
                     <!--<a style="text-decoration: none" ng-click="addMore(contact)" class="btn btn-block">{{page|NoUnderScore}}</a> -->
                 </div>
             </div>
             <div class="form-group" ng-show="isActive(currentPage, Pages[4])" ng-repeat="(key,value) in WorkExperience">
                 <label for="inputEmail3" style="color: black" class="col-sm-2 control-label">{{key|NoUnderScore| titlesize}}</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control loginform" name='work_experence[{{key}}]' id={{key}} placeholder={{key|NoUnderScore}}>
+                    <input type="text" class="form-control loginform" ng-model="WorkExperience[key]" name='work_experence[{{key}}]' id={{key}} placeholder={{key|NoUnderScore}}>
                 </div>
             </div>
 
@@ -136,7 +136,7 @@
               </div>
               <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" class="btn btn-default" ng-disabled="requiredFields()" ng-click="submitForm(ContactInput)">Save</button>
+                      <button type="submit" class="btn btn-default" ng-disabled="requiredFields()" ng-click="submitForm(ContactInput, Education, Skills, Projects, WorkExperience)">Save</button>
                       <a href="/somewhereelse" class="btn btn-default">Done</a>
                   </div>
               </div>
