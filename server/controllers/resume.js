@@ -97,7 +97,7 @@ exports.addResume = function (req, res) {
                   console.log(Object.keys(resume));
                   for (var x in Pages){
                     //console.log(Object.keys(resume[Pages[x]]));
-                    console.log(resume[Pages[x]].full_name);
+                    console.log(resume[Pages[x]][0].full_name);
                     for (var y in resume[Pages[x]]){
                       console.log(y);
                     }
