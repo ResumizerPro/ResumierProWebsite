@@ -102,7 +102,7 @@ exports.addResume = function (req, res) {
                   var exec = require('child_process').exec;
                   var cmd = 'sudo ./../../templates/laton text.tex input.sty helvetica.sty res.cls';
                   var fs = require('fs');
-                  var latex;
+                  var latex = '';
                   var cmmd = "\\newcommand";
                     for (var x in Pages){
                       switch(Pages[x]){
