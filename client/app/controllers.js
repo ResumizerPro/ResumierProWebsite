@@ -11,13 +11,13 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scopes
       iFrame.attr("src",iFrame.attr("src"));
     };
 
-    $scope.text = [
+    $scope.text = {
       'full_name' : '',
       'email' : '',
       'phone_number' : '',
       'gitHub' : '',
       'linkedIn' : ''
-    ]
+    }
     $scope.Pages = [
       'Contact_Info',
       'Education',
