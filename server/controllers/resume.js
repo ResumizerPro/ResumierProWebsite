@@ -115,7 +115,7 @@ exports.addResume = function (req, res) {
                         case 'education':
                           for (var y in Education){
                             var name = '\\' + Education[y].split('_').join('').toUpperCase();
-                            latex += cmmd + "{" + name + "e}" + "{"+ resume[Pages[x]][0][Education[y]] + "}\n" ;
+                            latex += cmmd + "{" + name + "E}" + "{"+ resume[Pages[x]][0][Education[y]] + "}\n" ;
                             console.log(Education[y] + ': ' + resume[Pages[x]][0][Education[y]]);
                           }
                           break;
@@ -136,7 +136,7 @@ exports.addResume = function (req, res) {
                         case 'work_experence':
                           for (var y in WorkExperience){
                             var name = '\\' + WorkExperience[y].split('_').join('').toUpperCase();
-                            latex += cmmd + "{" + name + "w}" + "{"+ resume[Pages[x]][0][WorkExperience[y]] + "}\n" ;
+                            latex += cmmd + "{" + name + "W}" + "{"+ resume[Pages[x]][0][WorkExperience[y]] + "}\n" ;
                             console.log(WorkExperience[y] + ': ' + resume[Pages[x]][0][WorkExperience[y]]);
                           }
                           break;
