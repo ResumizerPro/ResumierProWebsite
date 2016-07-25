@@ -17,52 +17,13 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope,
       iFrame.attr("src",iFrame.attr("src"));
     };
 
-    /*$scope.ContactInput = {
-        full_name : '',
-        email : '',
-        phone_number : '',
-        gitHub : '',
-        linkedIn : ''
-    };*/
     $scope.Pages = [
       'Contact_Info',
       'Education',
       'Skills',
       'Projects',
       'Work_Experience'
-    ]/*
-    $scope.Education = {
-      'university' : '',
-      'start_Month' : '',
-      'end_Month' : '',
-      'start_Year': '',
-      'end_Year': '',
-      'degree': '',
-      'city': ''
-    };
-    $scope.Skills = {
-      'programming_languages': '',
-      'iDEs': '',
-      'technologies': '',
-      'databases': ''
-    };
-    $scope.Projects = {
-      'project_name': '',
-      'project_link': '',
-      'project_description': '',
-      'project_implementation': '',
-      'project_technologies': ''
-    };
-    $scope.WorkExperience = {
-      'job_title': '',
-      'employer': '',
-      'city': '',
-      'start_month': '',
-      'start_year': '',
-      'end_month': '',
-      'end_year': '',
-      'job_description': ''
-    };*/
+    ]
     $scope.ChangeValue1 = function(){
       $scope.value1 = !scope.value1;
     };
@@ -78,6 +39,7 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope,
     };
     $scope.submitForm = function(CI, S, P, W, Edu){
       console.log(input);
+      $scope.ContactInput.push('CI',CI);
     }
     $scope.addUser = function (username, password) {
         console.log("its working?");
