@@ -47,9 +47,7 @@ exports.addResume = function (req, res) {
                 } else {
                   var exec = require('child_process').exec;
                   var cmd = 'sudo ./../../templates/laton text.tex input.sty helvetica.sty res.cls';
-                  for (var key in document.contact_info) {
-                      console.log(key);
-                  }
+                  console.log(resume);
                   /*var fs = require('fs');
                   fs.writeFile("/../../templates/input_1.sty",
                     var comd = "\newcommand";
