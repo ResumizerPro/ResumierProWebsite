@@ -65,9 +65,9 @@ exports.createresume = function (req, res) {
     var exec = require('child_process').exec;
     var cmd = './laton text.tex input_1.sty helvetica.sty res.cls';
     console.log(req.query.id);
-    exec(cmd, { cwd: __dirname } ,function(error, stdout, stderr) {
-      console.log(stderr);
-      console.log(stdout);
+    exec(cmd, {cwd: __dirname}, function (error, stdout, stderr) {
+        console.log(stderr);
+        console.log(stdout);
     });
     return res.render('create_template', {
         template: String(req.query.id)
@@ -156,9 +156,17 @@ exports.delete = function (req, res) {
 
 };
 exports.signout = function (req, res) {
-    req.logout();
-    res.render('success', {
-      title: 'Successful Logout!',
-      messages: "You are now logged out."
-    });
+    if (req.user) {
+        req.logout();
+        res.render('success_logout', {
+            title: 'Come back anytime',
+            messages: ''
+        });
+    }
+    else {
+        res.render('success_logout', {
+            title: 'You haven\'t logged in yet!',
+            messages: ''
+        });
+    }
 };
