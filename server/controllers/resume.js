@@ -101,7 +101,7 @@ exports.addResume = function (req, res) {
 
                   var exec = require('child_process').exec;
 
-                  var cmd = 'sudo laton text.tex input_1.sty helvetica.sty res.cls';
+                  var cmd = 'sudo ./laton text.tex input_1.sty helvetica.sty res.cls';
                   var fs = require('fs');
                   var latex = '';
                   var cmmd = "\\newcommand";
@@ -144,7 +144,7 @@ exports.addResume = function (req, res) {
                           break;
                         }
                   }
-                  fs.writeFile(__dirname + "/../../templates/input_1.sty",latex , function(err) {
+                  fs.writeFile(__dirname + "/input_1.sty",latex , function(err) {
                     if(err) {
                       return console.log(err);
                     }
