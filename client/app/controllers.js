@@ -12,15 +12,13 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
       iFrame.attr("src",iFrame.attr("src"));
     };
 
-    $scope.Input = {
-      values: {
-        full_name : "abcd",
-        email : "efgh",
-        phone_number : "ijkl",
-        gitHub : "tesf",
-        linkedIn : "test"
-      }
-    }
+    $scope.ContactInput = {
+        full_name : '',
+        email : '',
+        phone_number : '',
+        gitHub : '',
+        linkedIn : ''
+    };
     $scope.Pages = [
       'Contact_Info',
       'Education',
