@@ -62,6 +62,7 @@ exports.signup_render = function (req, res) {
 
 
 exports.createresume = function (req, res) {
+
     var exec = require('child_process').exec;
     var cmd = './laton text.tex input_1.sty helvetica.sty res.cls';
     console.log(req.query.id);
