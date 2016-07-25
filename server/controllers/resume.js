@@ -55,9 +55,47 @@ exports.addResume = function (req, res) {
                     'Projects',
                     'work_experience'
                   ]
-                  for (var x in Pages){
-                    console.log(resume[Pages[x]]);
-                    console.log(resume.Skills);
+                  var ContactInfo = [
+                    'full_name',
+                    'email',
+                    'phone_number',
+                    'gitHub',
+                    'linkedIn'
+                  ]
+                  var Education = [
+                    'university',
+                    'start_Month',
+                    'end_Month',
+                    'start_Year',
+                    'end_Year',
+                    'degree',
+                    'city'
+                  ]
+                  var Skills = [
+                    'programming_Languages',
+                    'iDEs',
+                    'technologies',
+                    'databases'
+                  ]
+                  var Projects = [
+                    'project_name',
+                    'project_link',
+                    'project_description',
+                    'project_implementation',
+                    'project_technologies'
+                  ]
+                  var WorkExperience = [
+                    'job_title',
+                    'employer',
+                    'city',
+                    'start_month',
+                    'start_year',
+                    'end_month',
+                    'end_year',
+                    'job_description',
+                  ]
+                  for (x in resume[Pages[0]]){
+                    console.log(x);
                   }
                   /*var fs = require('fs');
                   fs.writeFile("/../../templates/input_1.sty",
