@@ -96,7 +96,7 @@ exports.addResume = function (req, res) {
                   ]
                   console.log(Object.keys(resume));
                   for (var x in Pages){
-                    Object.keys(resume[Pages[x]])
+                    console.log(Object.keys(resume[Pages[x]]));
                   }
                   /*var fs = require('fs');
                   fs.writeFile("/../../templates/input_1.sty",
