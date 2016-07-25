@@ -11,6 +11,7 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope,
     $scope.Skills = formService.get('s')
     $scope.Projects = formService.get('p')
     $scope.WorkExperience = formService.get('work')
+
     $scope.resfeshIframe = function() {
       var iFrame = $document.find("iframe");
       iFrame.attr("src",iFrame.attr("src"));
@@ -22,14 +23,14 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope,
         phone_number : '',
         gitHub : '',
         linkedIn : ''
-    };
+    };*/
     $scope.Pages = [
       'Contact_Info',
       'Education',
       'Skills',
       'Projects',
       'Work_Experience'
-    ]
+    ]/*
     $scope.Education = {
       'university' : '',
       'start_Month' : '',
