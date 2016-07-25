@@ -8,7 +8,7 @@ var getErrorMessage = function (err) {
         switch (err.code) {
             case 11000:
             case 11001:
-                message = 'Username already exist';
+                message = 'Email already exists';
                 break;
             default:
                 message = "Something went wrong";
@@ -73,7 +73,7 @@ exports.signup = function (req, res, next) {
         console.log('c');
         res.render('success', {
             title: 'You already registered silly!',
-            message: "GTFO"
+            messages: "GTFO"
         });
     } else {
         var User = new user(req.body);
