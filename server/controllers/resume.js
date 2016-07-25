@@ -49,7 +49,7 @@ exports.addResume = function (req, res) {
                   var cmd = 'sudo ./../../templates/laton text.tex input.sty helvetica.sty res.cls';
                   for (var key in document) {
                     if (document.hasOwnProperty(key)) {
-                      console.log(key + " -> " + json.EJSON.stringify(document[key]));
+                      console.log(key + " -> " + JSON.stringify(document[key]));
                     }
                   }
                   /*var fs = require('fs');
