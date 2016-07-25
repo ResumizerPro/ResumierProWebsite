@@ -53,7 +53,7 @@ exports.addResume = function (req, res) {
                     'education',
                     'Skills',
                     'Projects',
-                    'work_experience'
+                    'work_experence'
                   ]
                   var ContactInfo = [
                     'full_name',
@@ -96,9 +96,7 @@ exports.addResume = function (req, res) {
                   ]
                   console.log(Object.keys(resume));
                   for (var x in Pages){
-
-                    console.log(resume[Pages[x]]);
-
+                    Object.keys(resume[Pages[x]])
                   }
                   /*var fs = require('fs');
                   fs.writeFile("/../../templates/input_1.sty",
