@@ -45,7 +45,7 @@ exports.addResume = function (req, res) {
                 if (err) {
                     return next(err);
                 } else {
-<<<<<<< HEAD
+
                   var exec = require('child_process').exec;
                   var cmd = 'sudo ./../../templates/laton text.tex input.sty helvetica.sty res.cls';
                   console.log(resume);
@@ -61,8 +61,6 @@ exports.addResume = function (req, res) {
                   exec(cmd, function(error, stdout, stderr) {
                     // command output is in stdout
                   });*/
-=======
->>>>>>> parent of 2e0ac0a... feat: writing resumes
                     res.json(resume);
                 }
             });
@@ -100,5 +98,5 @@ exports.removeResume = function (req, res) {
 };
 
 exports.getTemplate = function (req, res) {
-    res.sendFile(path.resolve(__dirname + '/../../templates/bigfile.pdf'));
+    res.sendFile(path.resolve(__dirname + '/../../templates/text.pdf'));
 };

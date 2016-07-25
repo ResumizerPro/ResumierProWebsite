@@ -10,7 +10,7 @@ var flash = require('connect-flash');
 var config = require('./config');
 
 module.exports = function (app) {
-    app.set('port', 80);
+    app.set('port', 3000);
     app.use(compression());
     app.use(logger('dev'));
     app.use(bodyParser.urlencoded({extended: true}));
