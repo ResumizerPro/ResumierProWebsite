@@ -100,7 +100,7 @@ exports.addResume = function (req, res) {
                 } else {
 
                   var exec = require('child_process').exec;
-                  var cmd = 'sudo ./' + __dirname + '/../../templates/laton text.tex input_1.sty helvetica.sty res.cls';
+                  var cmd = 'sudo .' + __dirname + '/../../templates/laton text.tex input_1.sty helvetica.sty res.cls';
                   var fs = require('fs');
                   var latex = '';
                   var cmmd = "\\newcommand";
