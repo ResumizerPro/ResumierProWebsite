@@ -13,11 +13,11 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
     };
 
     $scope.Input = {
-      full_name : "",
-      email : "",
-      phone_number : "",
-      gitHub : "",
-      linkedIn : ""
+      full_name : "abcd",
+      email : "efgh",
+      phone_number : "ijkl",
+      gitHub : "tesf",
+      linkedIn : "test"
     }
     $scope.Pages = [
       'Contact_Info',
