@@ -48,8 +48,15 @@ exports.addResume = function (req, res) {
 
                   var exec = require('child_process').exec;
                   var cmd = 'sudo ./../../templates/laton text.tex input.sty helvetica.sty res.cls';
-                  for (var x in resume){
-                    console.log(x);
+                  var Pages = [
+                    'contact_info',
+                    'education',
+                    'skills',
+                    'projects',
+                    'work_experience'
+                  ]
+                  for (var x in Pages){
+                    console.log(resume[x]);
                   }
                   /*var fs = require('fs');
                   fs.writeFile("/../../templates/input_1.sty",
