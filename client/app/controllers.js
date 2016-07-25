@@ -38,8 +38,11 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope,
       $scope.currentPage = String(str);
     };
     $scope.submitForm = function(CI, S, P, W, Edu){
-      console.log(CI);
       formService.put('CI',CI);
+      formService.put('s', S);
+      formService.put('p', P);
+      formService.put('work', W);
+      formService.put('edu',Edu);
     }
     $scope.addUser = function (username, password) {
         console.log("its working?");
