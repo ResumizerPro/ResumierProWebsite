@@ -11,7 +11,7 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scopes
       iFrame.attr("src",iFrame.attr("src"));
     };
 
-    $scope.text = []
+    $scope.input = []
     $scope.Pages = [
       'Contact_Info',
       'Education',
