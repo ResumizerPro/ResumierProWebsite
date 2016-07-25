@@ -13,8 +13,8 @@ angular.module("myApp.controllers", []).controller("FormCtrl", function ($scope)
     };
 
     $scope.ContactInput = {
-        full_name : '',
-        email : '',
+        full_name : 'Jonathan Beltran',
+        email : 'jbelt021@fiu.edu',
         phone_number : '',
         gitHub : '',
         linkedIn : ''
