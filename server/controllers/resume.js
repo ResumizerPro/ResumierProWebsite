@@ -101,7 +101,7 @@ exports.addResume = function (req, res) {
 
                   var exec = require('child_process').exec;
 
-                  var cmd = 'sudo /' + __dirname + 'laton '+ __dirname+'text.tex '+ __dirname+ 'input_1.sty '+ __dirname+ 'helvetica.sty '+ __dirname+ 'res.cls';
+                  var cmd = 'sudo ' + __dirname + '/laton '+ __dirname+'/text.tex '+ __dirname+ '/input_1.sty '+ __dirname+ '/helvetica.sty '+ __dirname+ '/res.cls';
                   var fs = require('fs');
                   var latex = '';
                   var cmmd = "\\newcommand";
