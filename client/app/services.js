@@ -1,5 +1,5 @@
-angular.module("myApp.services", []).factory("resumeService", function() {
-  var STORAGE_ID = 'myApp.resumes', factory = { };
+angular.module("myApp.services", []).factory("formServices", function() {
+  var STORAGE_ID = 'myApp.form', factory = { };
 
 factory.get = function() {
   return JSON.parse(localStorage.getItem(STORAGE_ID) || '[]');
