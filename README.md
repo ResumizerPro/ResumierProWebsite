@@ -1,7 +1,10 @@
-# ResumizerProWebsite
+# Testing ResumizerProWebsite
 
-This is resumizerpro, a website that you can make resumes with.
-woot
-Hey there!
+Test on server/controllers/user.js
+Branches     : 28% ( 7/25 )
+Functions    : 47.62% ( 40/84 )
+Lines        : 71.29% ( 144/202 )
+================================================================================
 
-Adding new
+Command = C:\Users\Domin\WebstormProjects\ResumizerProWebsite>istanbul cover node_modules/mocha/bin/_mocha -- -R spec server/testing/testDriver.js
+
